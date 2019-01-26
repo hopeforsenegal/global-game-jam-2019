@@ -20,8 +20,11 @@ public class Settings : ScriptableObject
 
 
 	[Header("Audio")]
-	[Tooltip("the game's title")]
 	public AudioClip mainMenuAudio;
+	public AudioClip pickupSoundEffect;
+	public AudioClip dropCorrectSoundEffect;
+	public AudioClip dropWrongSoundEffect;
+	public AudioClip rotateSoundEffect;
 
 
 	[Serializable]
