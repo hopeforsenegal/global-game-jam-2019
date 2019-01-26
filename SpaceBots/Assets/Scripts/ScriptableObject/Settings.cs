@@ -14,11 +14,25 @@ public class Settings : ScriptableObject
 	[Tooltip("the game's title")]
 	public string gametitle;
 
-	[Tooltip("the game scene")]
-	public string gameScene;
+	[Tooltip("the scene")]
+	public SceneSettings[] scenes;
 
 
 	[Header("Audio")]
 	[Tooltip("the game's title")]
 	public AudioClip mainMenuAudio;
+
+
+	[Serializable]
+	public struct SceneSettings
+	{
+		[Header("Audio")]
+		[Tooltip("The scenes audio")]
+		public AudioClip sceneAudio;
+
+
+		[Header("General")]
+		[Tooltip("the game scene")]
+		public string sceneToLoad;
+	}
 }

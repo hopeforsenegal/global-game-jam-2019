@@ -14,5 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainMenuBackground: {fileID: 21300000, guid: 69cfe635bc051478e87c0ce96e46d0a2, type: 3}
   gametitle: Space Bots
-  gameScene: game_level
+  scenes:
+  - sceneAudio: {fileID: 8300000, guid: a6f6310e3f5cc474186eda35470ad8d5, type: 3}
+    sceneToLoad: scene_1_intro
+  - sceneAudio: {fileID: 0}
+    sceneToLoad: 
+  - sceneAudio: {fileID: 0}
+    sceneToLoad: 
+  - sceneAudio: {fileID: 0}
+    sceneToLoad: 
+  - sceneAudio: {fileID: 0}
+    sceneToLoad: 
   mainMenuAudio: {fileID: 8300000, guid: a6f6310e3f5cc474186eda35470ad8d5, type: 3}

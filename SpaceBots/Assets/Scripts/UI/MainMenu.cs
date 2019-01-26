@@ -47,7 +47,8 @@ public class MainMenu : MonoBehaviour
 
 	private void PlayGame()
 	{
-		UnityEngine.SceneManagement.SceneManager.LoadScene(settings.gameScene);
+		GameController.Instance.sceneIndex = 0;
+		UnityEngine.SceneManagement.SceneManager.LoadScene(settings.scenes[GameController.Instance.sceneIndex].sceneToLoad);
 	}
 
 	private void ExitGame()
