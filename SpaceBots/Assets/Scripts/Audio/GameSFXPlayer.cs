@@ -11,7 +11,16 @@ public class GameSFXPlayer : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
 	{
-		Debug.Assert(AudioPlayer.TryGetInstance(out m_AudioPlayer));
+		if (AudioPlayer.TryGetInstance(out m_AudioPlayer)) {
+			PuzzleControler.PickupEvent += OnPickupSoundEffect;
+			PuzzleControler.DropCorrectEvent += OnDropCorrectSoundEffect;
+			PuzzleControler.DropWrongEvent += OnPickupSoundEffect;
+			PuzzleControler.RotateEvent += OnPickupSoundEffect;
+			PuzzlePiece.PickupEvent += OnPickupSoundEffect;
+			PuzzlePiece.DropCorrectEvent += OnDropCorrectSoundEffect;
+			PuzzlePiece.DropWrongEvent += OnPickupSoundEffect;
+			PuzzlePiece.RotateEvent += OnPickupSoundEffect;
+		}
 	}
 
 	void OnPickupSoundEffect()

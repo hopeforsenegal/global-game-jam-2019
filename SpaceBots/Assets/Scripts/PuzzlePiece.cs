@@ -1,9 +1,18 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PuzzlePiece : MonoBehaviour
 {
+	public static event Action PickupEvent;
+
+	public static event Action DropCorrectEvent;
+
+	public static event Action DropWrongEvent;
+
+	public static event Action RotateEvent;
+	
     //use to track number of pieces
     public int id;
 
@@ -53,22 +62,34 @@ public class PuzzlePiece : MonoBehaviour
     void doMouseThing()
     {
         if (Input.GetMouseButtonUp(0))
-        {
+		{
+			Debug.Log("Sending RayCast");
             {
                 if (locked == 0)
-                {
+				{
+					var invokeEvent = DropCorrectEvent;
+					if (invokeEvent != null) {
+						invokeEvent();
+					}
+
                     Parent.GetComponent<PuzzlePiece>().AddPiece();
                     Destroy(this.gameObject);
                 }
                 else if (locked == 1)
-                {
+				{
+					var invokeEvent = DropWrongEvent;
+					if (invokeEvent != null) {
+						invokeEvent();
+					}
+
                     locked = 3;
                     this.gameObject.transform.position = lockPos;
                 }
             }
         }
         else if (Input.GetMouseButton(0))
-        {
+		{
+			Debug.Log("Sending RayCast");
             if (locked == 0 || locked == 1)
             {
                 Debug.Log(id + " is Moving to mouse");

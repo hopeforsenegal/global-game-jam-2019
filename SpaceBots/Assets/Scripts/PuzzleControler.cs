@@ -8,11 +8,11 @@ public class PuzzleControler : MonoBehaviour
 
 	public static event Action PickupEvent;
 
-	public static event Action DropCorrect;
+	public static event Action DropCorrectEvent;
 
-	public static event Action DropWrong;
+	public static event Action DropWrongEvent;
 
-	public static event Action Rotate;
+	public static event Action RotateEvent;
 
 
     PuzzlePiece Pp;
@@ -80,7 +80,7 @@ public class PuzzleControler : MonoBehaviour
         //do lock
         else if (Input.GetMouseButtonUp(0))
 		{
-			var invokeEvent = DropCorrect;
+			var invokeEvent = DropCorrectEvent;
 			if (invokeEvent != null) {
 				invokeEvent();
 			}
