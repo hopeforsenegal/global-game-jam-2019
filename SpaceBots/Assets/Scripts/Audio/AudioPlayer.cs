@@ -97,8 +97,10 @@ public class AudioPlayer : MonoBehaviour
 	public void PlayMusic(AudioClip audio)
 	{
 		if (m_AudioSources != null && m_AudioSources.Length > 0) {
-			m_AudioSources[0].clip = audio;
-			m_AudioSources[0].Play();
+			if (m_AudioSources[0].clip != audio) {
+				m_AudioSources[0].clip = audio;
+				m_AudioSources[0].Play();
+			}
 		}
 	}
 

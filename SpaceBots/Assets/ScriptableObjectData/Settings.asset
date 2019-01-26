@@ -16,10 +16,10 @@ MonoBehaviour:
   fadeSpeed: 1
   gametitle: Lifeforce
   scenes:
-  - sceneAudio: {fileID: 8300000, guid: a6f6310e3f5cc474186eda35470ad8d5, type: 3}
+  - sceneAudio: {fileID: 8300000, guid: acdb2f2f0dd21404cb6769dc2d337a6c, type: 3}
     sceneToLoad: scene_1_intro
     robotImage: {fileID: 21300000, guid: 02c8498dfaf464795a934e6ae6af1c51, type: 3}
-  - sceneAudio: {fileID: 8300000, guid: a6f6310e3f5cc474186eda35470ad8d5, type: 3}
+  - sceneAudio: {fileID: 8300000, guid: acdb2f2f0dd21404cb6769dc2d337a6c, type: 3}
     sceneToLoad: scene_1_puzzle
     robotImage: {fileID: 21300000, guid: 02c8498dfaf464795a934e6ae6af1c51, type: 3}
   - sceneAudio: {fileID: 0}
@@ -32,9 +32,9 @@ MonoBehaviour:
     sceneToLoad: 
     robotImage: {fileID: 0}
   mainMenuAudio: {fileID: 8300000, guid: 348e032076e3c4c2c8bcf91f8dc600c3, type: 3}
-  pickupSoundEffect: {fileID: 8300000, guid: a168f46315d234dd79f9353b911f590b, type: 3}
-  dropCorrectSoundEffect: {fileID: 8300000, guid: a168f46315d234dd79f9353b911f590b,
+  pickupSoundEffect: {fileID: 8300000, guid: d290d09b7cdb749d49322e6ee5c8c8d3, type: 3}
+  dropCorrectSoundEffect: {fileID: 8300000, guid: 73dc21ecfea1b4762ab05b6ed65ed1b2,
     type: 3}
-  dropWrongSoundEffect: {fileID: 8300000, guid: a168f46315d234dd79f9353b911f590b,
+  dropWrongSoundEffect: {fileID: 8300000, guid: c8801c8ea23dd4b4c9cf3a337b9f8396,
     type: 3}
-  rotateSoundEffect: {fileID: 8300000, guid: a168f46315d234dd79f9353b911f590b, type: 3}
+  rotateSoundEffect: {fileID: 8300000, guid: c8801c8ea23dd4b4c9cf3a337b9f8396, type: 3}
