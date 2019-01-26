@@ -18,14 +18,19 @@ MonoBehaviour:
   scenes:
   - sceneAudio: {fileID: 8300000, guid: a6f6310e3f5cc474186eda35470ad8d5, type: 3}
     sceneToLoad: scene_1_intro
+    robotImage: {fileID: 21300000, guid: 02c8498dfaf464795a934e6ae6af1c51, type: 3}
   - sceneAudio: {fileID: 8300000, guid: a6f6310e3f5cc474186eda35470ad8d5, type: 3}
     sceneToLoad: scene_1_puzzle
+    robotImage: {fileID: 21300000, guid: 02c8498dfaf464795a934e6ae6af1c51, type: 3}
   - sceneAudio: {fileID: 0}
     sceneToLoad: 
+    robotImage: {fileID: 0}
   - sceneAudio: {fileID: 0}
     sceneToLoad: 
+    robotImage: {fileID: 0}
   - sceneAudio: {fileID: 0}
     sceneToLoad: 
+    robotImage: {fileID: 0}
   mainMenuAudio: {fileID: 8300000, guid: 348e032076e3c4c2c8bcf91f8dc600c3, type: 3}
   pickupSoundEffect: {fileID: 8300000, guid: a168f46315d234dd79f9353b911f590b, type: 3}
   dropCorrectSoundEffect: {fileID: 8300000, guid: a168f46315d234dd79f9353b911f590b,

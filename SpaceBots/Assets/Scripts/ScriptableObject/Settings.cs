@@ -38,5 +38,10 @@ public class Settings : ScriptableObject
 		[Header("General")]
 		[Tooltip("the game scene")]
 		public string sceneToLoad;
+
+
+		[Header("Render")]
+		[Tooltip("the robot image")]
+		public Sprite robotImage;
 	}
 }
