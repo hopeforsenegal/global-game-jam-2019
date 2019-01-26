@@ -5,32 +5,49 @@ using UnityEngine;
 
 public class LerpUI : MonoBehaviour
 {
+	#region Enums and Constants
+
+	#endregion
+
+	#region Events
+
 	public event Action TransitionCompleteEvent;
 
+	#endregion
+
+	#region Properties
+
+	#endregion
+
+	#region Inspectables
 
 	public RectTransform endTranform;
 
-	//Declare RectTransform in script
-	RectTransform faceButton;
-	//The new position of your button
-	Vector3 newPos;
-	//Reference value used for the Smoothdamp method
-	private Vector3 buttonVelocity = Vector3.zero;
-	//Smooth time
-	private float smoothTime = 0.5f;
+	#endregion
 
-	void Start()
+	#region Private Member Variables
+
+	private RectTransform m_FaceButton;
+	private Vector3 m_NewPos;
+	private Vector3 m_ButtonVelocity = Vector3.zero;
+	private float m_SmoothTime = 0.5f;
+
+	#endregion
+
+	#region Monobehaviours
+
+	protected void Start()
 	{
 		//Get the RectTransform component
-		faceButton = GetComponent<RectTransform>();
-		newPos = endTranform.localPosition;
+		m_FaceButton = GetComponent<RectTransform>();
+		m_NewPos = endTranform.localPosition;
 	}
 
-	void Update()
+	protected void Update()
 	{
 		//Update the localPosition towards the newPos
-		faceButton.localPosition = Vector3.SmoothDamp(faceButton.localPosition, newPos, ref buttonVelocity, smoothTime);
-		if (IsEqualWithinPrecision(faceButton.localPosition.y, newPos.y, 0.1f)) {
+		m_FaceButton.localPosition = Vector3.SmoothDamp(m_FaceButton.localPosition, m_NewPos, ref m_ButtonVelocity, m_SmoothTime);
+		if (IsEqualWithinPrecision(m_FaceButton.localPosition.y, m_NewPos.y, 0.1f)) {
 			var invokeEvent = TransitionCompleteEvent;
 			if (invokeEvent != null) {
 				invokeEvent();
@@ -39,9 +56,18 @@ public class LerpUI : MonoBehaviour
 		}
 	}
 
+	#endregion
 
-	public static bool IsEqualWithinPrecision(float a, float b, float precision)
+	#region Public Methods
+
+	#endregion
+
+	#region Private Methods
+
+	private static bool IsEqualWithinPrecision(float a, float b, float precision)
 	{
 		return Mathf.Abs(a - b) < precision || Mathf.Approximately(Mathf.Abs(a - b), 0f);
 	}
+
+	#endregion
 }

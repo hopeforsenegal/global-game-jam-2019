@@ -1,11 +1,24 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 
 [DisallowMultipleComponent]
 public class MainMenu : MonoBehaviour
 {
+	#region Enums and Constants
+
+	#endregion
+
+	#region Events
+
+	#endregion
+
+	#region Properties
+
+	#endregion
+
+	#region Inspectables
+
 	public Settings settings;
 	public Image background;
 	public Button playButton;
@@ -16,8 +29,15 @@ public class MainMenu : MonoBehaviour
 	public FadeCanvasGroup ui;
 	public FadeCanvasGroup black;
 
-	// Use this for initialization
-	void Start()
+	#endregion
+
+	#region Private Member Variables
+
+	#endregion
+
+	#region Monobehaviours
+
+	protected void Start()
 	{
 		background.sprite = settings.mainMenuBackground;
 		title.text = settings.gametitle;
@@ -31,8 +51,7 @@ public class MainMenu : MonoBehaviour
 		audioPlayer.PlayMusic(settings.mainMenuAudio);
 	}
 
-	// Update is called once per frame
-	void Update()
+	protected void Update()
 	{
 		var hitEnterKey = Input.GetKey(KeyCode.KeypadEnter)
 			|| Input.GetKey(KeyCode.Return);
@@ -46,10 +65,14 @@ public class MainMenu : MonoBehaviour
 		}
 	}
 
-	protected void OnMouseDown()
-	{
-		PlayGame();
-	}
+	#endregion
+
+	#region Public Methods
+
+	#endregion
+
+	#region Private Methods
+
 
 	private void PlayGame()
 	{
@@ -82,4 +105,6 @@ public class MainMenu : MonoBehaviour
 		Application.Quit();
 #endif
 	}
+
+	#endregion
 }

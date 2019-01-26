@@ -4,12 +4,33 @@ using UnityEngine;
 
 public class GameSFXPlayer : MonoBehaviour
 {
+	#region Enums and Constants
+
+	#endregion
+
+	#region Events
+
+	#endregion
+
+	#region Properties
+
+	#endregion
+
+	#region Inspectables
+
 	public Settings settings;
+
+	#endregion
+
+	#region Private Member Variables
 
 	private AudioPlayer m_AudioPlayer;
 
-	// Start is called before the first frame update
-	void Start()
+	#endregion
+
+	#region Monobehaviours
+
+	protected void Start()
 	{
 		if (AudioPlayer.TryGetInstance(out m_AudioPlayer)) {
 			PuzzleControler.PickupEvent += OnPickupSoundEffect;
@@ -23,23 +44,33 @@ public class GameSFXPlayer : MonoBehaviour
 		}
 	}
 
-	void OnPickupSoundEffect()
+	#endregion
+
+	#region Public Methods
+
+	#endregion
+
+	#region Private Methods
+
+	private void OnPickupSoundEffect()
 	{
 		m_AudioPlayer.PlaySound(settings.pickupSoundEffect);
 	}
 
-	void OnDropCorrectSoundEffect()
+	private void OnDropCorrectSoundEffect()
 	{
 		m_AudioPlayer.PlaySound(settings.dropCorrectSoundEffect);
 	}
 
-	void OnDropWrongSoundEffect()
+	private void OnDropWrongSoundEffect()
 	{
 		m_AudioPlayer.PlaySound(settings.dropWrongSoundEffect);
 	}
 
-	void OnRotateSoundEffect()
+	private void OnRotateSoundEffect()
 	{
 		m_AudioPlayer.PlaySound(settings.rotateSoundEffect);
 	}
+
+	#endregion
 }
