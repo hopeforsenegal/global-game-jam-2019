@@ -17,8 +17,8 @@ MonoBehaviour:
   scenes:
   - sceneAudio: {fileID: 8300000, guid: a6f6310e3f5cc474186eda35470ad8d5, type: 3}
     sceneToLoad: scene_1_intro
-  - sceneAudio: {fileID: 0}
-    sceneToLoad: 
+  - sceneAudio: {fileID: 8300000, guid: a6f6310e3f5cc474186eda35470ad8d5, type: 3}
+    sceneToLoad: scene_1_puzzle
   - sceneAudio: {fileID: 0}
     sceneToLoad: 
   - sceneAudio: {fileID: 0}

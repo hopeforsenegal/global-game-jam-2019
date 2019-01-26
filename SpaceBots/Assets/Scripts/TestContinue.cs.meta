@@ -1,15 +1,10 @@
 fileFormatVersion: 2
-guid: ceffff3c677e74116ab9cd466658ac5f
+guid: 9ff55dcf3c8554653a6a1759d1a6be1c
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
   - settings: {fileID: 11400000, guid: 369f2543f60104ff3850e5a05d9eb242, type: 2}
-  - background: {instanceID: 0}
-  - playButton: {instanceID: 0}
-  - exitButton: {instanceID: 0}
-  - title: {instanceID: 0}
-  - audioPlayer: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
