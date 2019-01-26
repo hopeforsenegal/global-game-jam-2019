@@ -35,35 +35,36 @@ public class PuzzleControler : MonoBehaviour
             RaycastHit hit;
             Ray CheckRay = Camera.main.ScreenPointToRay(Input.mousePosition);
             Debug.Log("Sending RayCast");
-            if (Physics.Raycast(CheckRay, out hit, 100f)) { 
-                Debug.Log(hit.collider.tag);
-
-                //set hit to an obj ref
-                Slot = hit.collider.gameObject;
-                Pp = Slot.GetComponent<PuzzlePiece>();
-
-                if(Slot.GetComponent<PuzzlePiece>().slot == true)
+            if (Physics.Raycast(CheckRay, out hit, 100f))
+            {
+                Debug.Log(hit.collider.name);
+                if (hit.collider.tag == "Piece")
                 {
-                    //subtract piece
-                    Pp.SubPiece();
-                    Instantiate(Slot).GetComponent<PuzzlePiece>().slot = false;
-                }
+                    //set hit to an obj ref
+                    Slot = hit.collider.gameObject;
+                    Pp = Slot.GetComponent<PuzzlePiece>();
+                    if (Pp.Spawn == true)
+                    {
+                        if (Pp.slot == true)
+                        {
+                            //subtract piece
+                            Pp.SubPiece();
+                            Piece = Instantiate(Slot);
+                            Piece.GetComponent<PuzzlePiece>().slot = false;
+                            Pp = Piece.GetComponent<PuzzlePiece>();
+                        }
 
-                //set last position to the hit location
-                lastPos = Slot.GetComponent<Transform>().transform.position;
-                Pp.SetParent(Slot);
+                        //set last position to the hit location
+                        lastPos = Slot.GetComponent<Transform>().transform.position;
+                        Pp.SetParent(Slot);
+                    }
+                }
             }
         }
         //do lock
         else if (Input.GetMouseButtonUp(0))
         {
-            Pp.AddPiece();
-            
-        }
-        //reset Pos
-        else if (Input.GetMouseButtonDown(1))
-        {
-
+            Piece = null;
         }
     }
 }

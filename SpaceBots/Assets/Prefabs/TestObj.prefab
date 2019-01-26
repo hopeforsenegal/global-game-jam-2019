@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 497373657688591631}
   m_Layer: 0
   m_Name: TestObj
-  m_TagString: Untagged
+  m_TagString: Piece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -94,8 +94,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 0
-  slot: 0
-  MaxPieces: 0
+  Spawn: 0
+  slot: 1
+  numPieces: 0
+  MaxPieces: 2
 --- !u!65 &497373657688591631
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -104,7 +106,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 497373657688591619}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.16, z: 0.2}
