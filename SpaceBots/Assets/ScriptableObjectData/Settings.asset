@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8ede08710fc74b20810471d4444c698, type: 3}
   m_Name: Settings
   m_EditorClassIdentifier: 
-  mainMenuBackground: {fileID: 21300000, guid: 69cfe635bc051478e87c0ce96e46d0a2, type: 3}
+  mainMenuBackground: {fileID: 21300000, guid: c5a13c15e1ac748cbacd6c06fbad39d4, type: 3}
   fadeSpeed: 1
   gametitle: Lifeforce
   scenes:
