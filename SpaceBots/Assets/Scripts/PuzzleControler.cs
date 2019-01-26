@@ -80,11 +80,6 @@ public class PuzzleControler : MonoBehaviour
         //do lock
         else if (Input.GetMouseButtonUp(0))
 		{
-			var invokeEvent = DropCorrectEvent;
-			if (invokeEvent != null) {
-				invokeEvent();
-			}
-
             Piece = null;
         }
     }

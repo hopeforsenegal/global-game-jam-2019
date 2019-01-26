@@ -72,7 +72,7 @@ public class PuzzlePiece : MonoBehaviour
 			Debug.LogFormat("[{0}/{1}:doMouseThing] Sending RayCast for up. state:{2}", name, id, locked);
 			{
 				if (locked == State.Free) {
-					var invokeEvent = DropCorrectEvent;
+					var invokeEvent = DropWrongEvent;
 					if (invokeEvent != null) {
 						invokeEvent();
 					}
@@ -80,7 +80,7 @@ public class PuzzlePiece : MonoBehaviour
 					Parent.GetComponent<PuzzlePiece>().AddPiece();
 					Destroy(this.gameObject);
 				} else if (locked == State.ReadyToLock) {
-					var invokeEvent = DropWrongEvent;
+					var invokeEvent = DropCorrectEvent;
 					if (invokeEvent != null) {
 						invokeEvent();
 					}
