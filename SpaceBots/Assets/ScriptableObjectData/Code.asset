@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e5e4b11283bd4c4daef6d6b275382fe, type: 3}
+  m_Name: Code
+  m_EditorClassIdentifier: 
+  text: " using UnityEngine; using System.Collections;  [DisallowMultipleComponent]
+    public class AudioPlayer : MonoBehaviour { \t#region Singleton  \tpublic static
+    AudioPlayer Instance \t{ \t\tget \t\t{ \t\t\treturn sInstance; \t\t} \t}  \tpublic
+    static bool TryGetInstance(out AudioPlayer returnVal) \t{ \t\treturnVal = sInstance;
+    \t\tif (returnVal == null) { \t\t\tDebug.LogWarning(string.Format(\"Couldn't access
+    {0}\", typeof(AudioPlayer).Name)); \t\t} \t\treturn (returnVal != null); \t}  \tprivate
+    static AudioPlayer sInstance;  \t#endregion  \t#region Enums and Constants  \t#endregion
+    \ \t#region Events  \t#endregion  \t#region Properties  \t#endregion  \t#region
+    Inspectables  \t#endregion  \t#region Private Member Variables  \tprivate AudioSource[]
+    m_AudioSources;  \t#endregion  \t#region Monobehaviours  \tprotected void Awake()
+    \t{ \t\tif (sInstance == null) { \t\t\tsInstance = this; \t\t} else if (sInstance
+    != this) { \t\t\tDestroyObject(gameObject); \t\t\treturn; \t\t}  \t\tDontDestroyOnLoad(gameObject);
+    \t}  \tprotected void Start() \t{ \t\tm_AudioSources = GetComponents<AudioSource>();
+    \t}  \tprotected void Update() \t{ \t}  \tprotected void OnEnable() \t{ \t}  \tprotected
+    void OnDisable() \t{ \t}  \tprotected void OnDestroy() \t{ \t\tsInstance = null;
+    \t}  \t#endregion  \t#region Public Methods  \t#endregion  \t#region Private Methods
+    \ \tpublic void PlayMusic(AudioClip audio) \t{ \t\tif (m_AudioSources != null
+    && m_AudioSources.Length > 0) { \t\t\tm_AudioSources[0].clip = audio; \t\t\tm_AudioSources[0].Play();
+    \t\t} \t}  \tpublic void PlaySound(AudioClip audio) \t{ \t\tbool soundPlayed =
+    false; \t\tforeach (AudioSource source in m_AudioSources) { \t\t\tif (!source.isPlaying)
+    { \t\t\t\tsource.clip = audio; \t\t\t\tsource.Play(); \t\t\t\tsoundPlayed = true;
+    \t\t\t\tbreak; \t\t\t} \t\t} \t\tif (!soundPlayed) { \t\t\tif (m_AudioSources
+    != null && m_AudioSources.Length > 0) { \t\t\t\tm_AudioSources[0].clip = audio;
+    \t\t\t\tm_AudioSources[0].Play(); \t\t\t} \t\t} \t}  \tpublic void PlaySoundDelay(AudioClip[]
+    audio, float delay) \t{ \t\tint n = Random.Range(0, audio.Length); \t\tPlaySoundDelay(audio[n],
+    delay); \t}  \tpublic void PlaySoundDelay(AudioClip audio, float delay) \t{ \t\tStartCoroutine(SoundPlaying(audio,
+    delay)); \t}  \tprivate IEnumerator SoundPlaying(AudioClip audio, float delay)
+    \t{ \t\tyield return new WaitForSeconds(delay); \t\tPlaySound(audio); \t} \t#endregion
+    } using System; using UnityEngine;  [DisallowMultipleComponent] public class FadeCanvasGroup
+    : MonoBehaviour { \t#region Enums and Constants  \t#endregion  \t#region Events
+    \ \tpublic event Action FadeCompleteEvent;  \t#endregion  \t#region Properties
+    \ \t#endregion  \t#region Inspectables  \t[Tooltip(\"The canvas group to deal
+    with\")] \tpublic CanvasGroup canvasGroup;  \t#endregion  \t#region Private Member
+    Variables  \tprivate float m_StartTime; \tprivate float m_Duration; \tprivate
+    float m_StartAlpha; \tprivate float m_EndAlpha; \tprivate bool m_IsActive;  \t#endregion
+    \ \t#region Monobehaviours  \tprotected void Update() \t{ \t\tif (!m_IsActive)
+    \t\t\treturn;  \t\tvar elapsedTime = Time.time - m_StartTime; // update the elapsed
+    time \t\tif (elapsedTime <= m_Duration) { \t\t\tvar percentage = 1 / (m_Duration
+    / elapsedTime); // calculate how far along the timeline we are \t\t\tif (m_StartAlpha
+    > m_EndAlpha) { \t\t\t\tcanvasGroup.alpha = m_StartAlpha - percentage; // calculate
+    the new alpha \t\t\t} else { \t\t\t\tcanvasGroup.alpha = m_StartAlpha + percentage;
+    // calculate the new alpha \t\t\t} \t\t} else { \t\t\tcanvasGroup.alpha = m_EndAlpha;
+    \t\t\tm_IsActive = false; \t\t\tvar invokeEvent = FadeCompleteEvent; \t\t\tif
+    (invokeEvent != null) { \t\t\t\tinvokeEvent(); \t\t\t} \t\t} \t}  \t#endregion
+    \ \t#region Public Methods  \tpublic void Fade(float startAlpha, float endAlpha,
+    float duration = 1f) \t{ \t\tCheckCanvasGroup(); \t\tFadeVisibilty(startAlpha,
+    endAlpha, duration); \t\tm_IsActive = true; \t}  \tpublic void UpdateInteractable(bool
+    interactable) \t{ \t\tCheckCanvasGroup(); \t\tcanvasGroup.interactable = interactable;
+    \t\tcanvasGroup.blocksRaycasts = interactable; \t}  \t#endregion  \t#region Private
+    Methods  \tprivate void CheckCanvasGroup() \t{ \t\tif (canvasGroup == null) {
+    \t\t\tcanvasGroup = GetComponent<CanvasGroup>(); \t\t}  \t\tDebug.Assert(canvasGroup
+    != null); \t}  \tprivate void FadeVisibilty(float startAlpha, float endAlpha,
+    float duration = 1f) \t{ \t\tm_StartTime = Time.time; \t\tm_Duration = duration;
+    \t\tm_StartAlpha = startAlpha; \t\tm_EndAlpha = endAlpha; \t}  \t#endregion } "
+  scrollSpeed: 10
