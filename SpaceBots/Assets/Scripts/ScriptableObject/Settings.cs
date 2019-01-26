@@ -7,7 +7,7 @@ public class Settings : ScriptableObject
 {
 	[Header("UI")]
 	[Tooltip("the main menu background")]
-	public Image mainMenuBackground;
+	public Sprite mainMenuBackground;
 
 	[Header("General")]
 	[Tooltip("the main game scene")]
