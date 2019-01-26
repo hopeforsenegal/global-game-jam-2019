@@ -12,6 +12,8 @@ public class MainMenu : MonoBehaviour
 	public Button exitButton;
 	public TextMeshProUGUI title;
 	public AudioPlayer audioPlayer;
+	public FadeCanvasGroup ui;
+	public FadeCanvasGroup black;
 
 	// Use this for initialization
 	void Start()
@@ -21,6 +23,8 @@ public class MainMenu : MonoBehaviour
 
 		playButton.onClick.AddListener(PlayGame);
 		exitButton.onClick.AddListener(ExitGame);
+		ui.FadeCompleteEvent += OnUIFadeCompleteEvent;
+		black.FadeCompleteEvent += OnBlackFadeCompleteEvent;
 
 		audioPlayer.PlayMusic(settings.mainMenuAudio);
 	}
@@ -46,6 +50,16 @@ public class MainMenu : MonoBehaviour
 	}
 
 	private void PlayGame()
+	{
+		ui.Fade(1, 0, settings.fadeSpeed);
+	}
+
+	private void OnUIFadeCompleteEvent()
+	{
+		black.Fade(0, 1, settings.fadeSpeed);
+	}
+
+	private void OnBlackFadeCompleteEvent()
 	{
 		GameController.Instance.sceneIndex = 0;
 		UnityEngine.SceneManagement.SceneManager.LoadScene(settings.scenes[GameController.Instance.sceneIndex].sceneToLoad);

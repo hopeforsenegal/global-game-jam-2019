@@ -8,6 +8,7 @@ public class Settings : ScriptableObject
 	[Header("UI")]
 	[Tooltip("the main menu background")]
 	public Sprite mainMenuBackground;
+	public float fadeSpeed;
 
 
 	[Header("General")]
