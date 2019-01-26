@@ -4,29 +4,37 @@ using UnityEngine;
 
 public class PuzzlePiece : MonoBehaviour
 {
+    //use to track number of pieces
     public int id;
+
+    //if you can spawn a piece
+    public bool Spawn;
 
     private GameObject Parent;
 
     private Vector3 lockPos;
 
     //if obj is in place
-    private bool locked;
+    private int locked;
 
     //if obj is stationary ref for copy
     public bool slot;
 
     //number of pieces left
+    [SerializeField]
     private int numPieces;
 
     //max number of objects this can spawn
     [SerializeField]
     private int MaxPieces;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-
+        if (slot)
+        {
+            Spawn = true;
+            numPieces = MaxPieces;
+        }
     }
 
     // Update is called once per frame
@@ -34,8 +42,10 @@ public class PuzzlePiece : MonoBehaviour
     {
         if (!slot)
         {
-            //lerp to mouse pos
-            doMouseThing();
+            if (locked != 3)
+            {
+                doMouseThing();
+            }
         }
 
     }
@@ -45,15 +55,24 @@ public class PuzzlePiece : MonoBehaviour
         if (Input.GetMouseButtonUp(0))
         {
             {
-                if (!locked)
+                if (locked == 0)
                 {
-                    //lerp to origin here
+                    Parent.GetComponent<PuzzlePiece>().AddPiece();
                     Destroy(this.gameObject);
                 }
-                else
+                else if (locked == 1)
                 {
+                    locked = 3;
                     this.gameObject.transform.position = lockPos;
                 }
+            }
+        }
+        else if (Input.GetMouseButton(0))
+        {
+            if (locked == 0 || locked == 1)
+            {
+                Debug.Log(id + " is Moving to mouse");
+                this.gameObject.transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition) + new Vector3(0, 0, 10);
             }
         }
     }
@@ -63,8 +82,8 @@ public class PuzzlePiece : MonoBehaviour
     {
         if (other.tag == "Anchor")
         {
-            locked = true;
-            other.gameObject.transform.position = lockPos;
+            locked = 1;
+            lockPos = other.gameObject.transform.position - new Vector3(0,0,1);
         }
     }
 
@@ -72,8 +91,8 @@ public class PuzzlePiece : MonoBehaviour
     {
         if(other.tag == "Anchor")
         {
-            locked = false;
-            lockPos = Parent.transform.position;
+            locked = 0;
+            //lockPos = Parent.transform.position;
         }
     }
 
@@ -89,6 +108,7 @@ public class PuzzlePiece : MonoBehaviour
         {
             Debug.Log("Adding Piece");
             numPieces++;
+            Spawn = true;
         }
         else
         {
@@ -98,10 +118,17 @@ public class PuzzlePiece : MonoBehaviour
 
     public void SubPiece()
     {
-        if(numPieces<= MaxPieces && numPieces > 0)
+        if (numPieces <= MaxPieces && numPieces > 0)
         {
+            id = numPieces;
             numPieces--;
             Debug.Log("Subtracting Piece");
+            if (numPieces <= 0)
+            {
+
+                Spawn = false;
+                Debug.Log("Cannot spawn any more pieces");
+            }
         }
         else
         {
