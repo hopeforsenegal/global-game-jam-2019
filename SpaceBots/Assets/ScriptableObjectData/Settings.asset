@@ -26,7 +26,7 @@ MonoBehaviour:
     sceneToLoad: 
   - sceneAudio: {fileID: 0}
     sceneToLoad: 
-  mainMenuAudio: {fileID: 8300000, guid: a6f6310e3f5cc474186eda35470ad8d5, type: 3}
+  mainMenuAudio: {fileID: 8300000, guid: 348e032076e3c4c2c8bcf91f8dc600c3, type: 3}
   pickupSoundEffect: {fileID: 8300000, guid: a168f46315d234dd79f9353b911f590b, type: 3}
   dropCorrectSoundEffect: {fileID: 8300000, guid: a168f46315d234dd79f9353b911f590b,
     type: 3}
