@@ -1,9 +1,20 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PuzzleControler : MonoBehaviour
 {
+
+	public static event Action PickupEvent;
+
+	public static event Action DropCorrect;
+
+	public static event Action DropWrong;
+
+	public static event Action Rotate;
+
+
     PuzzlePiece Pp;
 
     //spawned piece ref
@@ -44,7 +55,12 @@ public class PuzzleControler : MonoBehaviour
                     Slot = hit.collider.gameObject;
                     Pp = Slot.GetComponent<PuzzlePiece>();
                     if (Pp.Spawn == true)
-                    {
+					{
+						var invokeEvent = PickupEvent;
+						if (invokeEvent != null) {
+							invokeEvent();
+						}
+
                         if (Pp.slot == true)
                         {
                             //subtract piece
@@ -63,7 +79,12 @@ public class PuzzleControler : MonoBehaviour
         }
         //do lock
         else if (Input.GetMouseButtonUp(0))
-        {
+		{
+			var invokeEvent = DropCorrect;
+			if (invokeEvent != null) {
+				invokeEvent();
+			}
+
             Piece = null;
         }
     }
