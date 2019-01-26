@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: Settings
   m_EditorClassIdentifier: 
   mainMenuBackground: {fileID: 21300000, guid: 69cfe635bc051478e87c0ce96e46d0a2, type: 3}
+  gametitle: Space Bots
   gameScene: game_level
+  mainMenuAudio: {fileID: 0}

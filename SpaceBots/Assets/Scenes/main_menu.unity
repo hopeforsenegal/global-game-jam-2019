@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 305343862}
   - component: {fileID: 305343861}
   m_Layer: 5
-  m_Name: Start
+  m_Name: Exit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -329,6 +329,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   settings: {fileID: 11400000, guid: 369f2543f60104ff3850e5a05d9eb242, type: 2}
   background: {fileID: 2053202862}
+  playButton: {fileID: 2100295628}
+  exitButton: {fileID: 1036331046}
+  title: {fileID: 1959752625}
+  audioPlayer: {fileID: 1953043279}
 --- !u!1 &919253228
 GameObject:
   m_ObjectHideFlags: 0
@@ -341,7 +345,7 @@ GameObject:
   - component: {fileID: 919253231}
   - component: {fileID: 919253230}
   m_Layer: 5
-  m_Name: Start
+  m_Name: Play
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -861,6 +865,80 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1001 &1953043278
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 177056, guid: 1fe4f426ede784b098019afa3ce6c420, type: 3}
+      propertyPath: m_Name
+      value: AudioController
+      objectReference: {fileID: 0}
+    - target: {fileID: 427960, guid: 1fe4f426ede784b098019afa3ce6c420, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427960, guid: 1fe4f426ede784b098019afa3ce6c420, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427960, guid: 1fe4f426ede784b098019afa3ce6c420, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427960, guid: 1fe4f426ede784b098019afa3ce6c420, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427960, guid: 1fe4f426ede784b098019afa3ce6c420, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427960, guid: 1fe4f426ede784b098019afa3ce6c420, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427960, guid: 1fe4f426ede784b098019afa3ce6c420, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 427960, guid: 1fe4f426ede784b098019afa3ce6c420, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 427960, guid: 1fe4f426ede784b098019afa3ce6c420, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427960, guid: 1fe4f426ede784b098019afa3ce6c420, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427960, guid: 1fe4f426ede784b098019afa3ce6c420, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8224958, guid: 1fe4f426ede784b098019afa3ce6c420, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: a6f6310e3f5cc474186eda35470ad8d5, type: 3}
+    m_RemovedComponents:
+    - {fileID: 11403054, guid: 1fe4f426ede784b098019afa3ce6c420, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 1fe4f426ede784b098019afa3ce6c420, type: 3}
+--- !u!114 &1953043279 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 11434438, guid: 1fe4f426ede784b098019afa3ce6c420,
+    type: 3}
+  m_PrefabInstance: {fileID: 1953043278}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 198baeda224084f1d9b9bdd839afbb8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1959752623
 GameObject:
   m_ObjectHideFlags: 0
@@ -1108,7 +1186,7 @@ GameObject:
   - component: {fileID: 2100295629}
   - component: {fileID: 2100295628}
   m_Layer: 5
-  m_Name: StartButton
+  m_Name: PlayButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

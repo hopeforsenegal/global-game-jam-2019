@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 [DisallowMultipleComponent]
 public class MainMenu : MonoBehaviour
@@ -9,14 +10,19 @@ public class MainMenu : MonoBehaviour
 	public Image background;
 	public Button playButton;
 	public Button exitButton;
+	public TextMeshProUGUI title;
+	public AudioPlayer audioPlayer;
 
 	// Use this for initialization
 	void Start()
 	{
 		background.sprite = settings.mainMenuBackground;
+		title.text = settings.gametitle;
 
 		playButton.onClick.AddListener(PlayGame);
 		exitButton.onClick.AddListener(ExitGame);
+
+		audioPlayer.PlaySound(settings.mainMenuAudio);
 	}
 
 	// Update is called once per frame

@@ -9,7 +9,16 @@ public class Settings : ScriptableObject
 	[Tooltip("the main menu background")]
 	public Sprite mainMenuBackground;
 
+
 	[Header("General")]
-	[Tooltip("the main game scene")]
+	[Tooltip("the game's title")]
+	public string gametitle;
+
+	[Tooltip("the game scene")]
 	public string gameScene;
+
+
+	[Header("Audio")]
+	[Tooltip("the game's title")]
+	public AudioClip mainMenuAudio;
 }
