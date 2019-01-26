@@ -44,7 +44,7 @@ public class CodeRenderer : MonoBehaviour
 	{
 		//m_TextTransform.localPosition.y += code.scrollSpeed;
 		m_TextTransform.localPosition = new Vector3(m_TextTransform.localPosition.x, m_TextTransform.localPosition.y + code.scrollSpeed);
-		if (m_TextTransform.localPosition.y > 1000) {
+		if (m_TextTransform.localPosition.y > 2000) {
 			m_TextTransform.localPosition = m_InitialPosition;
 		}
 	}
