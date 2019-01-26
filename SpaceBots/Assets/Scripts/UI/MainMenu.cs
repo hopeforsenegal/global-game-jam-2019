@@ -22,7 +22,7 @@ public class MainMenu : MonoBehaviour
 		playButton.onClick.AddListener(PlayGame);
 		exitButton.onClick.AddListener(ExitGame);
 
-		audioPlayer.PlaySound(settings.mainMenuAudio);
+		audioPlayer.PlayMusic(settings.mainMenuAudio);
 	}
 
 	// Update is called once per frame

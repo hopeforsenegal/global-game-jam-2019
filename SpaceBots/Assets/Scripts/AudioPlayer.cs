@@ -94,6 +94,14 @@ public class AudioPlayer : MonoBehaviour
 
 	#region Private Methods
 
+	public void PlayMusic(AudioClip audio)
+	{
+		if (m_AudioSources != null && m_AudioSources.Length > 0) {
+			m_AudioSources[0].clip = audio;
+			m_AudioSources[0].Play();
+		}
+	}
+
 	public void PlaySound(AudioClip audio)
 	{
 		bool soundPlayed = false;

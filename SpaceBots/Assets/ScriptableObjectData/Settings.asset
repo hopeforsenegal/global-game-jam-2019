@@ -15,4 +15,4 @@ MonoBehaviour:
   mainMenuBackground: {fileID: 21300000, guid: 69cfe635bc051478e87c0ce96e46d0a2, type: 3}
   gametitle: Space Bots
   gameScene: game_level
-  mainMenuAudio: {fileID: 0}
+  mainMenuAudio: {fileID: 8300000, guid: a6f6310e3f5cc474186eda35470ad8d5, type: 3}
