@@ -94,11 +94,16 @@ public class PuzzleControler : MonoBehaviour
                 Debug.Log(hit.collider.name);
                 if (hit.collider.tag == "Piece")
                 {
-                    //set hit to an obj ref
-                    Slot = hit.collider.gameObject;
-                    Pp = Slot.GetComponent<PuzzlePiece>();
-                    if (Pp.Spawn == true)
+                    if (hit.collider.gameObject.GetComponent<PuzzlePiece>().slot == false)
                     {
+                        hit.collider.gameObject.GetComponent<PuzzlePiece>().setState();
+                    }
+                    else if (hit.collider.gameObject.GetComponent<PuzzlePiece>().Spawn == true)
+                    {
+                        //set hit to an obj ref
+                        Slot = hit.collider.gameObject;
+                        Pp = Slot.GetComponent<PuzzlePiece>();
+
                         var invokeEvent = PickupEvent;
                         if (invokeEvent != null)
                         {

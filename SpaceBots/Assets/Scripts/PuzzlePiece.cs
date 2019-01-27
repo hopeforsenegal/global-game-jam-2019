@@ -132,6 +132,8 @@ public class PuzzlePiece : MonoBehaviour
 		if (other.tag == "Anchor") {
 			if (locked != State.Locked) {
 				Debug.LogFormat("[{0}/{1}:OnTriggerExit] unlocked", name, id);
+                if(lockObj != null)
+                lockObj.GetComponent<Anchors>().setIncorrect();
                 lockObj = null;
 				locked = State.Free;
 			}
@@ -146,14 +148,19 @@ public class PuzzlePiece : MonoBehaviour
 
 	public void AddPiece()
 	{
-		if (Parent.GetComponent<PuzzlePiece>().sNumPieces < MaxPieces) {
+		if (sNumPieces < MaxPieces) {
 			Debug.Log("Adding Piece");
-			Parent.GetComponent<PuzzlePiece>().sNumPieces++;
-            Parent.GetComponent<PuzzlePiece>().Spawn = true;
-		} else {
+			sNumPieces++;
+            Spawn = true;
+        } else {
 			Debug.Log("Cant Add Piece");
 		}
 	}
+
+    public void setState()
+    {
+        locked = State.ReadyToLock;
+    }
 
 	public void SubPiece()
 	{
