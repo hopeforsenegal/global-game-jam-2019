@@ -44,7 +44,7 @@ public class TutorialHighlightWhileCorrect : MonoBehaviour
 	private void OnDropCorrectEvent()
 	{
 		m_Pulsater.enabled = false;
-		gameObject.active = false;
+		gameObject.SetActive(false);
 	}
 
 	#endregion
