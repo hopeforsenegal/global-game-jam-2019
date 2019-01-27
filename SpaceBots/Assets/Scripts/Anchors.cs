@@ -1,9 +1,12 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Anchors : MonoBehaviour
 {
+	public static event Action DropCorrectEvent;
+
     PuzzleControler Pc;
 
     public int _lockType;
@@ -19,6 +22,11 @@ public class Anchors : MonoBehaviour
             Debug.Log("adding to score");
             Pc.score++;
             num = 1;
+
+			var invokeEvent = DropCorrectEvent;
+			if (invokeEvent != null) {
+				invokeEvent();
+			}
         }
     }
 

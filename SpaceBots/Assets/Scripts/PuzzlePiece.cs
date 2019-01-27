@@ -14,8 +14,6 @@ public class PuzzlePiece : MonoBehaviour
 
 	public static event Action PickupEvent;
 
-	public static event Action DropCorrectEvent;
-
 	public static event Action DropWrongEvent;
 
 	public static event Action RotateEvent;
@@ -91,11 +89,6 @@ public class PuzzlePiece : MonoBehaviour
 					Parent.GetComponent<PuzzlePiece>().AddPiece();
 					Destroy(this.gameObject);
 				} else if (locked == State.ReadyToLock) {
-					var invokeEvent = DropCorrectEvent;
-					if (invokeEvent != null) {
-						invokeEvent();
-					}
-
 					locked = State.Locked;
 					this.gameObject.transform.position = lockPos;
                     checkRot();

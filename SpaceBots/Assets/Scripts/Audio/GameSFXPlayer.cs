@@ -34,13 +34,12 @@ public class GameSFXPlayer : MonoBehaviour
 	{
 		if (AudioPlayer.TryGetInstance(out m_AudioPlayer)) {
 			PuzzleControler.PickupEvent += OnPickupSoundEffect;
-			PuzzleControler.DropCorrectEvent += OnDropCorrectSoundEffect;
 			PuzzleControler.DropWrongEvent += OnPickupSoundEffect;
 			PuzzleControler.RotateEvent += OnPickupSoundEffect;
 			PuzzlePiece.PickupEvent += OnPickupSoundEffect;
-			PuzzlePiece.DropCorrectEvent += OnDropCorrectSoundEffect;
 			PuzzlePiece.DropWrongEvent += OnPickupSoundEffect;
 			PuzzlePiece.RotateEvent += OnPickupSoundEffect;
+			Anchors.DropCorrectEvent += OnDropCorrectSoundEffect;
 		}
 	}
 
