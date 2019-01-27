@@ -558,7 +558,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e75c12a2b06b1d643a3623e9b3091d0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _lockType: 0
+  _lockType: 1
 --- !u!54 &168364012
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -683,7 +683,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e75c12a2b06b1d643a3623e9b3091d0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _lockType: 0
+  _lockType: 1
 --- !u!54 &341451972
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1221,6 +1221,11 @@ PrefabInstance:
       propertyPath: MaxPieces
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1325524183058005119, guid: 29bb55a4a8924c1438eaeb02715f2b7e,
+        type: 3}
+      propertyPath: type
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 29bb55a4a8924c1438eaeb02715f2b7e, type: 3}
 --- !u!1 &1217139103
@@ -1255,7 +1260,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e75c12a2b06b1d643a3623e9b3091d0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _lockType: 3
+  _lockType: 0
 --- !u!54 &1217139105
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1652,7 +1657,7 @@ PrefabInstance:
     - target: {fileID: 1325524183058005119, guid: 29bb55a4a8924c1438eaeb02715f2b7e,
         type: 3}
       propertyPath: type
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1325524183058005119, guid: 29bb55a4a8924c1438eaeb02715f2b7e,
         type: 3}
