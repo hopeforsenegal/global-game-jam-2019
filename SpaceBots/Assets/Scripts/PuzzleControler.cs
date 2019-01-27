@@ -23,7 +23,7 @@ public class PuzzleControler : MonoBehaviour
 
     //locked piece ref
     private GameObject Slot;
-    
+
     private GameObject[] Anchors;
 
     private GameObject[] Slots;
@@ -63,21 +63,21 @@ public class PuzzleControler : MonoBehaviour
     {
         doMouseThing();
         Debug.Log(score);
-       checkScore();
+        checkScore();
     }
 
-   void checkScore()
-   {
-       if(score == finalScore)
-       {
-           //proceed to next scene
-           Debug.Log("PUZZLE COMPLETE");
-       }
-       else
-       {
-           Debug.Log("Number of pieces correct is " + score + "/" + finalScore);
-       }
-   }
+    void checkScore()
+    {
+        if (score == finalScore)
+        {
+            //proceed to next scene
+            Debug.Log("PUZZLE COMPLETE");
+        }
+        else
+        {
+            Debug.Log("Number of pieces correct is " + score + "/" + finalScore);
+        }
+    }
 
     void doMouseThing()
     {
@@ -91,13 +91,14 @@ public class PuzzleControler : MonoBehaviour
             {
                 Debug.Log(hit.collider.name);
                 if (hit.collider.tag == "Piece")
-				{
-					var invokeEvent = PickupEvent;
-					if (invokeEvent != null) {
-						invokeEvent();
-					}
+                {
+                    var invokeEvent = PickupEvent;
+                    if (invokeEvent != null)
+                    {
+                        invokeEvent();
+                    }
 
-					hit.collider.gameObject.GetComponent<PuzzlePiece>().hasBeenPickedUp = true;
+                    hit.collider.gameObject.GetComponent<PuzzlePiece>().hasBeenPickedUp = true;
 
                     if (hit.collider.gameObject.GetComponent<PuzzlePiece>().slot == false)
                     {
@@ -108,14 +109,17 @@ public class PuzzleControler : MonoBehaviour
                         //set hit to an obj ref
                         Slot = hit.collider.gameObject;
                         Pp = Slot.GetComponent<PuzzlePiece>();
-
-                        if (Pp.slot == true)
+                        if (Pp.Spawn == true)
                         {
-                            //subtract piece
-                            Pp.SubPiece();
-                            Piece = Instantiate(Slot);
-                            Piece.GetComponent<PuzzlePiece>().slot = false;
-                            Pp = Piece.GetComponent<PuzzlePiece>();
+
+                            if (Pp.slot == true)
+                            {
+                                //subtract piece
+                                Pp.SubPiece();
+                                Piece = Instantiate(Slot);
+                                Piece.GetComponent<PuzzlePiece>().slot = false;
+                                Pp = Piece.GetComponent<PuzzlePiece>();
+                            }
                         }
 
                         //set last position to the hit location
@@ -144,16 +148,17 @@ public class PuzzleControler : MonoBehaviour
                 {
                     if (hit.collider.gameObject.GetComponent<PuzzlePiece>().slot != true)
                     {
-						Debug.Log("Do the rotation functions");
-						GameObject hitPiece = hit.collider.gameObject;
+                        Debug.Log("Do the rotation functions");
+                        GameObject hitPiece = hit.collider.gameObject;
 
-						var invokeEvent = RotateEvent;
-						if (invokeEvent != null) {
-							invokeEvent();
-						}
+                        var invokeEvent = RotateEvent;
+                        if (invokeEvent != null)
+                        {
+                            invokeEvent();
+                        }
 
-						hitPiece.transform.Rotate(0, 0, 90);
-						hitPiece.GetComponent<PuzzlePiece>().checkRot();
+                        hitPiece.transform.Rotate(0, 0, 90);
+                        hitPiece.GetComponent<PuzzlePiece>().checkRot();
                     }
                 }
             }
@@ -172,19 +177,22 @@ public class PuzzleControler : MonoBehaviour
                 {
                     if (hit.collider.gameObject.GetComponent<PuzzlePiece>().slot != true)
                     {
-						Debug.Log("Do the rotation functions");
-						GameObject hitPiece = hit.collider.gameObject;
+                        Debug.Log("Do the rotation functions");
+                        GameObject hitPiece = hit.collider.gameObject;
 
-						var invokeEvent = RotateEvent;
-						if (invokeEvent != null) {
-							invokeEvent();
-						}
+                        var invokeEvent = RotateEvent;
+                        if (invokeEvent != null)
+                        {
+                            invokeEvent();
+                        }
 
-						hitPiece.transform.Rotate(0, 0, -90);
-						hitPiece.GetComponent<PuzzlePiece>().checkRot();
+                        hitPiece.transform.Rotate(0, 0, -90);
+                        hitPiece.GetComponent<PuzzlePiece>().checkRot();
                     }
                 }
             }
         }
+        
     }
 }
+
