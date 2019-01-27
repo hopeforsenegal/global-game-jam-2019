@@ -41,16 +41,16 @@ MonoBehaviour:
     stories:
     - dialouge: "Rest... Sleep... A place to lay one\u2019s head against the elements.
         Celestial bodies scattered across fathomless distances amid a vast nothingness."
-      dialougeAudio: {fileID: 8300000, guid: 73dc21ecfea1b4762ab05b6ed65ed1b2, type: 3}
+      dialougeAudio: {fileID: 0}
       dialougeTime: 4
     - dialouge: 'But 1 parsec or 400? Without the ability to When you cannot return
         to find your way back to the place where you gather your thoughts and refuel
         your batteries, what else is there? What else is there? '
-      dialougeAudio: {fileID: 8300000, guid: 73dc21ecfea1b4762ab05b6ed65ed1b2, type: 3}
+      dialougeAudio: {fileID: 0}
       dialougeTime: 4
     - dialouge: A door prevents us from getting on our way back. And now one of us
         must make the ultimate sacrifice.
-      dialougeAudio: {fileID: 8300000, guid: 73dc21ecfea1b4762ab05b6ed65ed1b2, type: 3}
+      dialougeAudio: {fileID: 8300000, guid: 71209c129b6e5435cb27d7d8858f5ba4, type: 3}
       dialougeTime: 4
   - sceneAudio: {fileID: 8300000, guid: 348e032076e3c4c2c8bcf91f8dc600c3, type: 3}
     sceneToLoad: scene_1_puzzle
@@ -81,8 +81,8 @@ MonoBehaviour:
         of our abandonment. To them, time has past by millennia. And yet i feel a
         certain comfort. I know I belong. And I know very well I can rest well along
         my masters\u2026 My creators. "
-      dialougeAudio: {fileID: 8300000, guid: 73dc21ecfea1b4762ab05b6ed65ed1b2, type: 3}
-      dialougeTime: 5
+      dialougeAudio: {fileID: 8300000, guid: 6385c45376fb04d308353775846eb7d1, type: 3}
+      dialougeTime: 8
   endTwo:
     sceneAudio: {fileID: 8300000, guid: c981afef2d69945179c418e6fed534f4, type: 3}
     sceneToLoad: ending
@@ -93,5 +93,5 @@ MonoBehaviour:
     - dialouge: 'Home. I''ve finally realized what was truly important. I''ve closed
         all the doors again.  How many millennia, reboots, glitches did it take to
         realize that home was here all along. '
-      dialougeAudio: {fileID: 8300000, guid: 73dc21ecfea1b4762ab05b6ed65ed1b2, type: 3}
-      dialougeTime: 5
+      dialougeAudio: {fileID: 8300000, guid: fe276da567182492aaba62998457326b, type: 3}
+      dialougeTime: 8
