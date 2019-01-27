@@ -22,6 +22,7 @@ public class StoryTeller : MonoBehaviour
 	public Settings settings;
 	public FadeIn fadeIn;
 	public DialougeText text;
+	public Image robot;
 
 	#endregion
 
@@ -36,6 +37,11 @@ public class StoryTeller : MonoBehaviour
 
 	protected void Start()
 	{
+		int index = 0;
+		if (GameController.TryGetInstance(out m_GameController)) {
+			index = m_GameController.sceneIndex;
+		}
+		robot.sprite = settings.scenes[index].robotImage;
 		fadeIn.FadeCompleteEvent += OnFadeCompleteEvent;
 	}
 

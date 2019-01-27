@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8ede08710fc74b20810471d4444c698, type: 3}
   m_Name: Settings
   m_EditorClassIdentifier: 
-  mainMenuBackground: {fileID: 21300000, guid: 9591063a140194ec19abb1ab2ec6e890, type: 3}
+  mainMenuBackground: {fileID: 21300000, guid: 63bdcd728f5114590a75b0aa6236f4b8, type: 3}
   fadeSpeed: 1
   initialScene: main_menu
   mainMenuAudio: {fileID: 8300000, guid: 2e84138a769f04f2d8b5a48f67c3210e, type: 3}
@@ -35,18 +35,12 @@ MonoBehaviour:
   scenes:
   - sceneAudio: {fileID: 8300000, guid: acdb2f2f0dd21404cb6769dc2d337a6c, type: 3}
     sceneToLoad: scene_1_intro
-    robotImage: {fileID: 21300000, guid: 02c8498dfaf464795a934e6ae6af1c51, type: 3}
+    robotImage: {fileID: 21300000, guid: 6b6667fa818da428cb9d0ea79b1c7049, type: 3}
     stories:
     - dialouge: "Rest... Sleep... A place to lay one\u2019s head against the elements.
         Celestial bodies scattered across fathomless distances amid a vast nothingness."
       dialougeAudio: {fileID: 8300000, guid: 73dc21ecfea1b4762ab05b6ed65ed1b2, type: 3}
       dialougeTime: 3
-    - dialouge: Blah
-      dialougeAudio: {fileID: 0}
-      dialougeTime: 0
-    - dialouge: 
-      dialougeAudio: {fileID: 0}
-      dialougeTime: 0
   - sceneAudio: {fileID: 8300000, guid: 348e032076e3c4c2c8bcf91f8dc600c3, type: 3}
     sceneToLoad: scene_1_puzzle
     robotImage: {fileID: 21300000, guid: 02c8498dfaf464795a934e6ae6af1c51, type: 3}

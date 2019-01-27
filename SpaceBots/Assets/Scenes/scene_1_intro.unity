@@ -1124,6 +1124,7 @@ MonoBehaviour:
   settings: {fileID: 11400000, guid: 369f2543f60104ff3850e5a05d9eb242, type: 2}
   fadeIn: {fileID: 4572413850749542354}
   text: {fileID: 2108669955}
+  robot: {fileID: 388640423}
 --- !u!1 &1484004120
 GameObject:
   m_ObjectHideFlags: 0
