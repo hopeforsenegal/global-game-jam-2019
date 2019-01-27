@@ -54,7 +54,7 @@ public class GameSFXPlayer : MonoBehaviour
 
 	private void OnPickupSoundEffect()
 	{
-		m_AudioPlayer.PlaySound(settings.pickupSoundEffect);
+		m_AudioPlayer.PlaySoundDelay(settings.pickupSoundEffect, 0f);
 	}
 
 	private void OnDropCorrectSoundEffect()
@@ -69,7 +69,7 @@ public class GameSFXPlayer : MonoBehaviour
 
 	private void OnRotateSoundEffect()
 	{
-		m_AudioPlayer.PlaySound(settings.rotateSoundEffect);
+		m_AudioPlayer.PlaySoundDelay(settings.rotateSoundEffect, 0f);
 	}
 
 	#endregion

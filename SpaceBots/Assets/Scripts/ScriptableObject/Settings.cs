@@ -10,21 +10,21 @@ public class Settings : ScriptableObject
 	public Sprite mainMenuBackground;
 	public float fadeSpeed;
 
-
 	[Header("General")]
 	[Tooltip("the game's starting scene")]
 	public string initialScene;
 
-	[Tooltip("the scene")]
-	public SceneSettings[] scenes;
-
-
 	[Header("Audio")]
 	public AudioClip mainMenuAudio;
-	public AudioClip pickupSoundEffect;
+	public AudioClip[] pickupSoundEffect;
 	public AudioClip dropCorrectSoundEffect;
 	public AudioClip dropWrongSoundEffect;
-	public AudioClip rotateSoundEffect;
+	public AudioClip[] rotateSoundEffect;
+
+
+	[Header("General")]
+	[Tooltip("the scenes")]
+	public SceneSettings[] scenes;
 
 
 	[Serializable]

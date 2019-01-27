@@ -117,8 +117,8 @@ public class AudioPlayer : MonoBehaviour
 		}
 		if (!soundPlayed) {
 			if (m_AudioSources != null && m_AudioSources.Length > 0) {
-				m_AudioSources[0].clip = audio;
-				m_AudioSources[0].Play();
+				m_AudioSources[1].clip = audio;
+				m_AudioSources[1].Play();
 			}
 		}
 	}

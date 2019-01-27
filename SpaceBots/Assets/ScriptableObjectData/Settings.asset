@@ -15,17 +15,27 @@ MonoBehaviour:
   mainMenuBackground: {fileID: 21300000, guid: 9591063a140194ec19abb1ab2ec6e890, type: 3}
   fadeSpeed: 1
   initialScene: main_menu
-  scenes:
-  - sceneAudio: {fileID: 8300000, guid: acdb2f2f0dd21404cb6769dc2d337a6c, type: 3}
-    sceneToLoad: scene_1_intro
-    robotImage: {fileID: 21300000, guid: 02c8498dfaf464795a934e6ae6af1c51, type: 3}
-  - sceneAudio: {fileID: 8300000, guid: acdb2f2f0dd21404cb6769dc2d337a6c, type: 3}
-    sceneToLoad: scene_1_puzzle
-    robotImage: {fileID: 21300000, guid: 02c8498dfaf464795a934e6ae6af1c51, type: 3}
-  mainMenuAudio: {fileID: 8300000, guid: 348e032076e3c4c2c8bcf91f8dc600c3, type: 3}
-  pickupSoundEffect: {fileID: 8300000, guid: d290d09b7cdb749d49322e6ee5c8c8d3, type: 3}
+  mainMenuAudio: {fileID: 8300000, guid: 2e84138a769f04f2d8b5a48f67c3210e, type: 3}
+  pickupSoundEffect:
+  - {fileID: 8300000, guid: 64229f5cfe2fd451fb1bd74fc157543c, type: 3}
+  - {fileID: 8300000, guid: 5132b0ac6335e435aaae9f029141a515, type: 3}
+  - {fileID: 8300000, guid: 1aa2ed29e54504083a15115e31af204e, type: 3}
+  - {fileID: 8300000, guid: 1e6cdb36208e44e8ca7bcb1925738f4b, type: 3}
+  - {fileID: 8300000, guid: 883d8f75d3716484d9b17de0c336dadf, type: 3}
   dropCorrectSoundEffect: {fileID: 8300000, guid: 73dc21ecfea1b4762ab05b6ed65ed1b2,
     type: 3}
   dropWrongSoundEffect: {fileID: 8300000, guid: c8801c8ea23dd4b4c9cf3a337b9f8396,
     type: 3}
-  rotateSoundEffect: {fileID: 8300000, guid: c8801c8ea23dd4b4c9cf3a337b9f8396, type: 3}
+  rotateSoundEffect:
+  - {fileID: 8300000, guid: 110ab695d0d884668a8f2ef18c2f1a45, type: 3}
+  - {fileID: 8300000, guid: 316f41946d90843c59e3a0c18eb7a4d9, type: 3}
+  - {fileID: 8300000, guid: 603a9118559c24d9e86d92469101243c, type: 3}
+  - {fileID: 8300000, guid: df45b8d220d364a0aa798b70716f261e, type: 3}
+  - {fileID: 8300000, guid: 2ccda608c4dcc421e8255f790f87a613, type: 3}
+  scenes:
+  - sceneAudio: {fileID: 8300000, guid: acdb2f2f0dd21404cb6769dc2d337a6c, type: 3}
+    sceneToLoad: scene_1_intro
+    robotImage: {fileID: 21300000, guid: 02c8498dfaf464795a934e6ae6af1c51, type: 3}
+  - sceneAudio: {fileID: 8300000, guid: 348e032076e3c4c2c8bcf91f8dc600c3, type: 3}
+    sceneToLoad: scene_1_puzzle
+    robotImage: {fileID: 21300000, guid: 02c8498dfaf464795a934e6ae6af1c51, type: 3}

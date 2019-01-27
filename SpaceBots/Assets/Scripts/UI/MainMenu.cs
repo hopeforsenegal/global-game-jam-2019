@@ -78,7 +78,7 @@ public class MainMenu : MonoBehaviour
 	private void PlayGame()
 	{
 		if (AudioPlayer.TryGetInstance(out m_AudioPlayer)) {
-			m_AudioPlayer.PlaySound(settings.pickupSoundEffect);
+			m_AudioPlayer.PlaySoundDelay(settings.pickupSoundEffect, 0f);
 		}
 		ui.Fade(1, 0, settings.fadeSpeed);
 	}
