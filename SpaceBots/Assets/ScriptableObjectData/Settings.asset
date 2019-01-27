@@ -88,7 +88,7 @@ MonoBehaviour:
     sceneToLoad: ending
     theme: 
     isEndScene: 0
-    robotImage: {fileID: 21300000, guid: 63bdcd728f5114590a75b0aa6236f4b8, type: 3}
+    robotImage: {fileID: 21300000, guid: 94ee8ed4593864a438ccf92b8725488f, type: 3}
     stories:
     - dialouge: 'Home. I''ve finally realized what was truly important. I''ve closed
         all the doors again.  How many millennia, reboots, glitches did it take to
