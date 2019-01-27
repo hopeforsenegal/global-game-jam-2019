@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8ede08710fc74b20810471d4444c698, type: 3}
   m_Name: Settings
   m_EditorClassIdentifier: 
-  mainMenuBackground: {fileID: 21300000, guid: c5a13c15e1ac748cbacd6c06fbad39d4, type: 3}
+  mainMenuBackground: {fileID: 21300000, guid: 9591063a140194ec19abb1ab2ec6e890, type: 3}
   fadeSpeed: 1
-  gametitle: Lifeforce
   initialScene: main_menu
   scenes:
   - sceneAudio: {fileID: 8300000, guid: acdb2f2f0dd21404cb6769dc2d337a6c, type: 3}
