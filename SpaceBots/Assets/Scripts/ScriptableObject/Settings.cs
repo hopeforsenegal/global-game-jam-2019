@@ -25,6 +25,8 @@ public class Settings : ScriptableObject
 	[Header("General")]
 	[Tooltip("the scenes")]
 	public SceneSettings[] scenes;
+	public SceneSettings endOne;
+	public SceneSettings endTwo;
 
 	[Serializable]
 	public struct SceneStory
@@ -45,6 +47,7 @@ public class Settings : ScriptableObject
 		[Header("General")]
 		[Tooltip("the game scene")]
 		public string sceneToLoad;
+		public bool isEndScene;
 
 		[Header("Render")]
 		[Tooltip("the robot image")]

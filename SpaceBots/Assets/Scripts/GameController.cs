@@ -50,6 +50,7 @@ public class GameController : MonoBehaviour
 
 	#region Inspectables
 
+	public int ending;
 	public Settings settings;
 
 	#endregion

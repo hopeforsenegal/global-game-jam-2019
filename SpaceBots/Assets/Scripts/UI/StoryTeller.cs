@@ -24,12 +24,17 @@ public class StoryTeller : MonoBehaviour
 	public DialougeText text;
 	public FadeCanvasGroup exitBlack;
 
+	public FadeCanvasGroup theEndGame;
+	public Button endOneButton;
+	public Button endTwoButton;
+
 	#endregion
 
 	#region Private Member Variables
 
 	private GameController m_GameController;
 	private int m_StoryIndex;
+	private bool m_stayOff;
 
 	#endregion
 
@@ -37,10 +42,14 @@ public class StoryTeller : MonoBehaviour
 
 	protected void Start()
 	{
+		endOneButton.onClick.AddListener(EndingOne);
+		endTwoButton.onClick.AddListener(EndingTwo);
 		text.DialougeShowCompleteEvent += OnDialougeShowCompleteEvent;
 		text.DialougeHideEvent += OnDialougeHideEvent;
 		fadeIn.FadeCompleteEvent += OnFadeCompleteEvent;
+		exitBlack.FadeCompleteEvent += OnExitFadeCompleteEvent;
 		m_StoryIndex = 0;
+		m_stayOff = false;
 	}
 
 	#endregion
@@ -64,13 +73,22 @@ public class StoryTeller : MonoBehaviour
 	{
 		var index = SceneIndex();
 		var stories = settings.scenes[index].stories;
+		var isEndScene = settings.scenes[index].isEndScene;
 		if (m_StoryIndex < stories.Length) {
 			var story = stories[m_StoryIndex];
 			m_StoryIndex++;
 			text.Show(story);
 		} else {
-			exitBlack.Fade(0, 1, settings.fadeSpeed);
-			exitBlack.FadeCompleteEvent += OnExitFadeCompleteEvent;
+			if (!isEndScene) {
+				exitBlack.Fade(0, 1, settings.fadeSpeed);
+			} else {
+				if (!m_stayOff) {
+					m_stayOff = true;
+					Debug.LogFormat("[{0}:ShowNextStory] fadeSpeed:{1}", name, settings.fadeSpeed);
+					theEndGame.Fade(0f, 1f, settings.fadeSpeed);
+					theEndGame.UpdateInteractable(true);
+				}
+			}
 		}
 	}
 
@@ -91,7 +109,30 @@ public class StoryTeller : MonoBehaviour
 
 	private void OnExitFadeCompleteEvent()
 	{
-		GameController.Instance.LoadNextScene();
+		var index = SceneIndex();
+		var isEndScene = settings.scenes[index].isEndScene;
+		if (!isEndScene) {
+			GameController.Instance.LoadNextScene();
+		} else {
+			if (!m_stayOff) {
+				m_stayOff = true;
+				Debug.LogFormat("[{0}:OnExitFadeCompleteEvent] fadeSpeed:{1}", name, settings.fadeSpeed);
+				theEndGame.Fade(0f, 1f, settings.fadeSpeed);
+				theEndGame.UpdateInteractable(true);
+			}
+		}
+	}
+
+	private void EndingOne()
+	{
+		GameController.Instance.ending = 1;
+		UnityEngine.SceneManagement.SceneManager.LoadScene(settings.endOne.sceneToLoad);
+	}
+
+	private void EndingTwo()
+	{
+		GameController.Instance.ending = 2;
+		UnityEngine.SceneManagement.SceneManager.LoadScene(settings.endTwo.sceneToLoad);
 	}
 
 	#endregion
