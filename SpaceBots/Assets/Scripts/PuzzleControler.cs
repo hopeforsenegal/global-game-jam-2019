@@ -104,11 +104,11 @@ public class PuzzleControler : MonoBehaviour
                     {
                         hit.collider.gameObject.GetComponent<PuzzlePiece>().setState();
                     }
-                    else if (hit.collider.gameObject.GetComponent<PuzzlePiece>().Spawn == true) {
+                    else if (hit.collider.gameObject.GetComponent<PuzzlePiece>().Spawner == true) {
 						//set hit to an obj ref
 						Slot = hit.collider.gameObject;
 						Pp = Slot.GetComponent<PuzzlePiece>();
-						if (Pp.Spawn == true && Pp.slot == true) {
+						if (Pp.Spawner == true && Pp.slot == true) {
 							//subtract piece
 							Pp.SubPiece();
 							Piece = Instantiate(Slot);

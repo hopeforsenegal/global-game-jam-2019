@@ -68,7 +68,7 @@ public class RobotImageBodyParts : MonoBehaviour
 		var numImages = settings.scenes[index].robotBodyParts.Length;
 		var scale = (int)Mathf.Floor(Scale(0, puzzleControler.finalScore, 0, numImages, puzzleControler.score));
 		scale = Mathf.Clamp(scale, 0, numImages - 1);
-	//	m_Image.sprite = settings.scenes[index].robotBodyParts[scale];
+		m_Image.sprite = settings.scenes[index].robotBodyParts[scale];
 	}
 
 	private int SceneIndex()

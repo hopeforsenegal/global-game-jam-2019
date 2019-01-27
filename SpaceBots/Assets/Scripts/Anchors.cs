@@ -11,7 +11,7 @@ public class Anchors : MonoBehaviour
 
 	public PieceEnumUtil.PieceEnum _lockType;
 
-    bool correct;
+    public bool correct;
 
     private int num;
 	public PieceEnumUtil.DirectionEnum direction;

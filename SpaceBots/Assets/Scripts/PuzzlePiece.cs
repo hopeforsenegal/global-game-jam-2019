@@ -30,7 +30,7 @@ public class PuzzlePiece : MonoBehaviour
 	public PieceEnumUtil.DirectionEnum direction;
 
 	//if you can spawn a piece
-	public bool Spawn;
+	public bool Spawner;
 
 	//if obj is stationary ref for copy
 	public bool slot;
@@ -57,7 +57,7 @@ public class PuzzlePiece : MonoBehaviour
 	protected void Start()
 	{
 		if (slot) {
-			Spawn = true;
+			Spawner = true;
 			sNumPieces = MaxPieces;
 		}
 	}
@@ -113,7 +113,7 @@ public class PuzzlePiece : MonoBehaviour
 		if (other.tag == "Anchor") {
 			Debug.LogFormat("[{0}/{1}:OnTriggerEnter] locked", name, id);
 
-            if (type == other.gameObject.GetComponent<Anchors>()._lockType)
+			if (type == other.gameObject.GetComponent<Anchors>()._lockType && !other.gameObject.GetComponent<Anchors>().correct)
             {
                 lockObj = other.gameObject;
                 // Make into position to show above the lock
@@ -128,9 +128,10 @@ public class PuzzlePiece : MonoBehaviour
 		if (other.tag == "Anchor") {
 			if (locked != State.Locked) {
 				Debug.LogFormat("[{0}/{1}:OnTriggerExit] unlocked", name, id);
-                if(lockObj != null)
-                lockObj.GetComponent<Anchors>().setIncorrect();
-                lockObj = null;
+				if (lockObj != null) {
+					lockObj.GetComponent<Anchors>().setIncorrect();
+				}
+				lockObj = null;
 				locked = State.Free;
 			}
 		}
@@ -147,7 +148,7 @@ public class PuzzlePiece : MonoBehaviour
 		if (sNumPieces < MaxPieces) {
 			Debug.Log("Adding Piece");
 			sNumPieces++;
-            Spawn = true;
+            Spawner = true;
         } else {
 			Debug.Log("Cant Add Piece");
 		}
@@ -166,7 +167,7 @@ public class PuzzlePiece : MonoBehaviour
 			Debug.Log("Subtracting Piece");
 			if (sNumPieces <= 0) {
 
-				Spawn = false;
+				Spawner = false;
 				Debug.Log("Cannot spawn any more pieces");
 			}
 		} else {
