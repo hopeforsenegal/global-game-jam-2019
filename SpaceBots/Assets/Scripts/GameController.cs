@@ -9,22 +9,15 @@ public class GameController : MonoBehaviour
 
 	public static GameController Instance
 	{
-		get
-		{
-			return sInstance;
-		}
+		get;
+		private set;
 	}
 
-	public static bool TryGetInstance(out GameController returnVal)
+	public static bool TryGetInstance(out GameController controller)
 	{
-		returnVal = sInstance;
-		if (returnVal == null) {
-			Debug.LogWarning(string.Format("Couldn't access {0}", typeof(GameController).Name));
-		}
-		return (returnVal != null);
+		controller = Instance;
+		return controller != null;
 	}
-
-	private static GameController sInstance;
 
 	#endregion
 
@@ -65,10 +58,10 @@ public class GameController : MonoBehaviour
 
 	protected void Awake()
 	{
-		if (sInstance == null) {
-			sInstance = this;
-		} else if (sInstance != this) {
-			DestroyObject(gameObject);
+		if (Instance == null) {
+			Instance = this;
+		} else if (Instance != this) {
+			Destroy(gameObject);
 			return;
 		}
 
@@ -78,6 +71,7 @@ public class GameController : MonoBehaviour
 	protected void Start()
 	{
 		m_SceneIndex = -1;
+		ending = 0;
 	}
 
 	protected void Update()
@@ -94,7 +88,9 @@ public class GameController : MonoBehaviour
 
 	protected void OnDestroy()
 	{
-		sInstance = null;
+		if (Instance != this)
+			return;
+		Instance = null;
 	}
 
 	#endregion
@@ -104,6 +100,9 @@ public class GameController : MonoBehaviour
 	public void ResetSceneToMainMenu()
 	{
 		m_SceneIndex = -1;
+		ending = 0;
+		Debug.LogFormat("[{0}:ResetSceneToMainMenu] scene:{1}", name, settings.initialScene);
+
 		UnityEngine.SceneManagement.SceneManager.LoadScene(settings.initialScene);
 	}
 
@@ -116,6 +115,7 @@ public class GameController : MonoBehaviour
 		} else {
 			sceneToLoad = settings.initialScene;
 		}
+		Debug.LogFormat("[{0}:LoadNextScene] scene:{1} m_SceneIndex:{2}", name, sceneToLoad, m_SceneIndex);
 		UnityEngine.SceneManagement.SceneManager.LoadScene(sceneToLoad);
 	}
 

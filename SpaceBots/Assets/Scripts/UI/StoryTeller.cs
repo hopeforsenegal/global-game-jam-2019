@@ -19,6 +19,7 @@ public class StoryTeller : MonoBehaviour
 
 	#region Inspectables
 
+	public Text title;
 	public Settings settings;
 	public FadeIn fadeIn;
 	public DialougeText text;
@@ -42,6 +43,8 @@ public class StoryTeller : MonoBehaviour
 
 	protected void Start()
 	{
+		var index = SceneIndex();
+		title.text = settings.scenes[index].theme;
 		endOneButton.onClick.AddListener(EndingOne);
 		endTwoButton.onClick.AddListener(EndingTwo);
 		text.DialougeShowCompleteEvent += OnDialougeShowCompleteEvent;
@@ -84,7 +87,6 @@ public class StoryTeller : MonoBehaviour
 			} else {
 				if (!m_stayOff) {
 					m_stayOff = true;
-					Debug.LogFormat("[{0}:ShowNextStory] fadeSpeed:{1}", name, settings.fadeSpeed);
 					theEndGame.Fade(0f, 1f, settings.fadeSpeed);
 					theEndGame.UpdateInteractable(true);
 				}

@@ -47,6 +47,7 @@ public class Settings : ScriptableObject
 		[Header("General")]
 		[Tooltip("the game scene")]
 		public string sceneToLoad;
+		public string theme;
 		public bool isEndScene;
 
 		[Header("Render")]

@@ -32,6 +32,7 @@ public class MainMenu : MonoBehaviour
 	#region Private Member Variables
 
 	private AudioPlayer m_AudioPlayer;
+	private GameController m_GameController;
 
 	#endregion
 
@@ -39,6 +40,11 @@ public class MainMenu : MonoBehaviour
 
 	protected void Start()
 	{
+		Debug.LogFormat("[{0}:Start]", name);
+
+		Debug.Assert(GameController.TryGetInstance(out m_GameController), "m_GameController not set");
+		Debug.Assert(AudioPlayer.TryGetInstance(out m_AudioPlayer), "m_AudioPlayer not set");
+
 		background.sprite = settings.mainMenuBackground;
 
 		playButton.onClick.AddListener(PlayGame);
@@ -47,9 +53,16 @@ public class MainMenu : MonoBehaviour
 		black.FadeCompleteEvent += OnBlackFadeCompleteEvent;
 		lerpTitle.TransitionCompleteEvent += OnTransitionCompleteEvent;
 
-		if (AudioPlayer.TryGetInstance(out m_AudioPlayer)) {
-			m_AudioPlayer.PlayMusic(settings.mainMenuAudio);
-		}
+		m_AudioPlayer.PlayMusic(settings.mainMenuAudio);
+	}
+
+	protected void OnDestroy()
+	{
+		playButton.onClick.RemoveListener(PlayGame);
+		exitButton.onClick.RemoveListener(ExitGame);
+		ui.FadeCompleteEvent -= OnUIFadeCompleteEvent;
+		black.FadeCompleteEvent -= OnBlackFadeCompleteEvent;
+		lerpTitle.TransitionCompleteEvent -= OnTransitionCompleteEvent;
 	}
 
 	protected void Update()
@@ -74,15 +87,6 @@ public class MainMenu : MonoBehaviour
 
 	#region Private Methods
 
-
-	private void PlayGame()
-	{
-		if (AudioPlayer.TryGetInstance(out m_AudioPlayer)) {
-			m_AudioPlayer.PlaySoundDelay(settings.pickupSoundEffect, 0f);
-		}
-		ui.Fade(1, 0, settings.fadeSpeed);
-	}
-
 	private void OnUIFadeCompleteEvent()
 	{
 		lerpTitle.enabled = true;
@@ -95,7 +99,15 @@ public class MainMenu : MonoBehaviour
 
 	private void OnBlackFadeCompleteEvent()
 	{
-		GameController.Instance.LoadNextScene();
+		m_GameController.LoadNextScene();
+	}
+
+	private void PlayGame()
+	{
+		Debug.LogFormat("[{0}:PlayGame]", name);
+
+		m_AudioPlayer.PlaySoundDelay(settings.pickupSoundEffect, 0f);
+		ui.Fade(1, 0, settings.fadeSpeed);
 	}
 
 	private void ExitGame()

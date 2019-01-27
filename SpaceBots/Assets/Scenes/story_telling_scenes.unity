@@ -1645,6 +1645,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af76dbcf4325c4d798998c912b2f8ef9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  title: {fileID: 1050944941}
   settings: {fileID: 11400000, guid: 369f2543f60104ff3850e5a05d9eb242, type: 2}
   fadeIn: {fileID: 4572413850749542354}
   text: {fileID: 2108669955}

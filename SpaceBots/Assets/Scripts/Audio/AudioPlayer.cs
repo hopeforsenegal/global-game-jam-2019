@@ -9,22 +9,15 @@ public class AudioPlayer : MonoBehaviour
 
 	public static AudioPlayer Instance
 	{
-		get
-		{
-			return sInstance;
-		}
+		get;
+		private set;
 	}
 
-	public static bool TryGetInstance(out AudioPlayer returnVal)
+	public static bool TryGetInstance(out AudioPlayer controller)
 	{
-		returnVal = sInstance;
-		if (returnVal == null) {
-			Debug.LogWarning(string.Format("Couldn't access {0}", typeof(AudioPlayer).Name));
-		}
-		return (returnVal != null);
+		controller = Instance;
+		return controller != null;
 	}
-
-	private static AudioPlayer sInstance;
 
 	#endregion
 
@@ -54,10 +47,10 @@ public class AudioPlayer : MonoBehaviour
 
 	protected void Awake()
 	{
-		if (sInstance == null) {
-			sInstance = this;
-		} else if (sInstance != this) {
-			DestroyObject(gameObject);
+		if (Instance == null) {
+			Instance = this;
+		} else if (Instance != this) {
+			Destroy(gameObject);
 			return;
 		}
 
@@ -83,7 +76,9 @@ public class AudioPlayer : MonoBehaviour
 
 	protected void OnDestroy()
 	{
-		sInstance = null;
+		if (Instance != this)
+			return;
+		Instance = null;
 	}
 
 	#endregion

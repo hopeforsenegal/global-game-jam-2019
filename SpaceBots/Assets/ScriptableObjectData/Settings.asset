@@ -35,6 +35,7 @@ MonoBehaviour:
   scenes:
   - sceneAudio: {fileID: 8300000, guid: acdb2f2f0dd21404cb6769dc2d337a6c, type: 3}
     sceneToLoad: story_telling_scenes
+    theme: Rest & Shelter
     isEndScene: 0
     robotImage: {fileID: 21300000, guid: 6b6667fa818da428cb9d0ea79b1c7049, type: 3}
     stories:
@@ -53,22 +54,26 @@ MonoBehaviour:
       dialougeTime: 4
   - sceneAudio: {fileID: 8300000, guid: 348e032076e3c4c2c8bcf91f8dc600c3, type: 3}
     sceneToLoad: scene_1_puzzle
+    theme: 
     isEndScene: 0
     robotImage: {fileID: 21300000, guid: 6b6667fa818da428cb9d0ea79b1c7049, type: 3}
     stories: []
   - sceneAudio: {fileID: 8300000, guid: fd7eef92021394607863023a6f573fe3, type: 3}
     sceneToLoad: story_telling_scenes
+    theme: Safety & Comfort
     isEndScene: 0
     robotImage: {fileID: 21300000, guid: d1016adb07e8a4ca898779d2591a6716, type: 3}
     stories: []
   - sceneAudio: {fileID: 8300000, guid: c981afef2d69945179c418e6fed534f4, type: 3}
     sceneToLoad: story_telling_scenes
+    theme: 
     isEndScene: 1
     robotImage: {fileID: 21300000, guid: c417f1b498c9744498f23693f96fb1e8, type: 3}
     stories: []
   endOne:
     sceneAudio: {fileID: 8300000, guid: c981afef2d69945179c418e6fed534f4, type: 3}
     sceneToLoad: ending
+    theme: 
     isEndScene: 0
     robotImage: {fileID: 21300000, guid: 63bdcd728f5114590a75b0aa6236f4b8, type: 3}
     stories:
@@ -81,6 +86,7 @@ MonoBehaviour:
   endTwo:
     sceneAudio: {fileID: 8300000, guid: c981afef2d69945179c418e6fed534f4, type: 3}
     sceneToLoad: ending
+    theme: 
     isEndScene: 0
     robotImage: {fileID: 21300000, guid: 63bdcd728f5114590a75b0aa6236f4b8, type: 3}
     stories:
