@@ -23,9 +23,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 1aa2ed29e54504083a15115e31af204e, type: 3}
   - {fileID: 8300000, guid: 1e6cdb36208e44e8ca7bcb1925738f4b, type: 3}
   - {fileID: 8300000, guid: 883d8f75d3716484d9b17de0c336dadf, type: 3}
-  dropCorrectSoundEffect: {fileID: 8300000, guid: 73dc21ecfea1b4762ab05b6ed65ed1b2,
+  dropCorrectSoundEffect: {fileID: 8300000, guid: 437bb9ea05f1546cc8cfce8c2c23c1bb,
     type: 3}
-  dropWrongSoundEffect: {fileID: 8300000, guid: c8801c8ea23dd4b4c9cf3a337b9f8396,
+  dropWrongSoundEffect: {fileID: 8300000, guid: a337a087c62ab47f0bbd4da50dc9b8fe,
     type: 3}
   rotateSoundEffect:
   - {fileID: 8300000, guid: 110ab695d0d884668a8f2ef18c2f1a45, type: 3}
