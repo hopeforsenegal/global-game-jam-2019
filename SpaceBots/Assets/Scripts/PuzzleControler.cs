@@ -97,6 +97,8 @@ public class PuzzleControler : MonoBehaviour
 						invokeEvent();
 					}
 
+					hit.collider.gameObject.GetComponent<PuzzlePiece>().hasBeenPickedUp = true;
+
                     if (hit.collider.gameObject.GetComponent<PuzzlePiece>().slot == false)
                     {
                         hit.collider.gameObject.GetComponent<PuzzlePiece>().setState();
@@ -129,7 +131,7 @@ public class PuzzleControler : MonoBehaviour
             Piece = null;
         }
         //rotate right
-        else if (Input.mouseScrollDelta.y > 0f)
+		else if (Input.mouseScrollDelta.y > 0f|| Input.GetKeyUp(KeyCode.RightArrow))
         {
             Debug.Log("Casting rotation ray");
             RaycastHit hit;
@@ -157,7 +159,7 @@ public class PuzzleControler : MonoBehaviour
             }
         }
         //rotate left
-        else if (Input.mouseScrollDelta.y < 0f)
+		else if (Input.mouseScrollDelta.y < 0f || Input.GetKeyUp(KeyCode.LeftArrow))
         {
             Debug.Log("Casting rotation ray");
             RaycastHit hit;

@@ -9,6 +9,7 @@ public class Settings : ScriptableObject
 	[Tooltip("the main menu background")]
 	public Sprite mainMenuBackground;
 	public float fadeSpeed;
+	public Color highlightColor;
 
 	[Header("General")]
 	[Tooltip("the game's starting scene")]

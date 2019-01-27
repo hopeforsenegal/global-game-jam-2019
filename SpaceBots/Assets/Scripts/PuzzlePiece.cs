@@ -34,6 +34,8 @@ public class PuzzlePiece : MonoBehaviour
 	//if obj is stationary ref for copy
 	public bool slot;
 
+	public bool hasBeenPickedUp;
+
 	//max number of objects this can spawn
 	[SerializeField]
 	private int MaxPieces;
