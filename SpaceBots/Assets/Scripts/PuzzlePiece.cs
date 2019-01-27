@@ -21,11 +21,14 @@ public class PuzzlePiece : MonoBehaviour
 	public static event Action RotateEvent;
 
 
-	private static int sNumPieces;
+	public int sNumPieces;
 
 
 	//use to track number of pieces
 	public int id;
+
+    //use for piece type
+    public int type;
 
 	//if you can spawn a piece
 	public bool Spawn;
@@ -39,7 +42,11 @@ public class PuzzlePiece : MonoBehaviour
 
 	private GameObject Parent;
 
+    private Quaternion lockRot;
+
 	private Vector3 lockPos;
+
+    private GameObject lockObj;
 
 	//if obj is in place
 	private State locked;
@@ -65,6 +72,11 @@ public class PuzzlePiece : MonoBehaviour
 
 	#endregion
 
+    //public void setMaxP (int maxPieces)
+    //{
+    //    MaxPieces += maxPieces;
+    //}
+
 	void doMouseThing()
 	{
 		if (Input.GetMouseButtonUp(0)) {
@@ -86,6 +98,7 @@ public class PuzzlePiece : MonoBehaviour
 
 					locked = State.Locked;
 					this.gameObject.transform.position = lockPos;
+                    checkRot();
 					Debug.LogFormat("[{0}/{1}:doMouseThing] is locked", name, id);
 				}
 			}
@@ -103,9 +116,14 @@ public class PuzzlePiece : MonoBehaviour
 	{
 		if (other.tag == "Anchor") {
 			Debug.LogFormat("[{0}/{1}:OnTriggerEnter] locked", name, id);
-			// Make into position to show above the lock
-			lockPos = other.gameObject.transform.position - new Vector3(0, 0, 1);
-			locked = State.ReadyToLock;
+
+            if (type == other.gameObject.GetComponent<Anchors>()._lockType)
+            {
+                lockObj = other.gameObject;
+                // Make into position to show above the lock
+                lockPos = lockObj.transform.position - new Vector3(0, 0, 1);
+                locked = State.ReadyToLock;
+            }
 		}
 	}
 
@@ -114,6 +132,7 @@ public class PuzzlePiece : MonoBehaviour
 		if (other.tag == "Anchor") {
 			if (locked != State.Locked) {
 				Debug.LogFormat("[{0}/{1}:OnTriggerExit] unlocked", name, id);
+                lockObj = null;
 				locked = State.Free;
 			}
 		}
@@ -127,10 +146,10 @@ public class PuzzlePiece : MonoBehaviour
 
 	public void AddPiece()
 	{
-		if (sNumPieces < MaxPieces) {
+		if (Parent.GetComponent<PuzzlePiece>().sNumPieces < MaxPieces) {
 			Debug.Log("Adding Piece");
-			sNumPieces++;
-			Spawn = true;
+			Parent.GetComponent<PuzzlePiece>().sNumPieces++;
+            Parent.GetComponent<PuzzlePiece>().Spawn = true;
 		} else {
 			Debug.Log("Cant Add Piece");
 		}
@@ -151,4 +170,26 @@ public class PuzzlePiece : MonoBehaviour
 			Debug.Log("Cant Sub Piece");
 		}
 	}
+
+    public void checkRot()
+    {
+        if (!slot)
+        {
+            if (locked == State.Locked)
+            {
+                //Quaternion curRot = this.gameObject.transform.rotation;
+                //float angle = Quaternion.Angle(curRot, lockRot);
+                if (this.gameObject.transform.rotation == lockObj.transform.rotation)
+                {
+                    Debug.Log("Matching rotation");
+                    lockObj.GetComponent<Anchors>().setCorrect();
+                }
+                else
+                {
+                    Debug.Log("Wrong rotation");
+                    lockObj.GetComponent<Anchors>().setIncorrect();
+                }
+            }
+        }
+    }
 }

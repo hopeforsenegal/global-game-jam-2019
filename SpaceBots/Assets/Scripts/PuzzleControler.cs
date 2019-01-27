@@ -14,29 +14,72 @@ public class PuzzleControler : MonoBehaviour
 
     public static event Action RotateEvent;
 
-
     PuzzlePiece Pp;
+
+    public int score;
+
+    private int finalScore;
 
     //spawned piece ref
     private GameObject Piece;
 
     //locked piece ref
     private GameObject Slot;
+    
+    private GameObject[] Anchors;
+
+    private GameObject[] Slots;
 
     //slot pos ref
     private Vector3 lastPos;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
+        if (Anchors == null)
+            Anchors = GameObject.FindGameObjectsWithTag("Anchor");
 
+        //if (Slots == null)
+        //{
+        //    Slots = GameObject.FindGameObjectsWithTag("Piece");
+        //}
+        //
+        //for(int i = 0; i<Anchors.Length-1; i++)
+        //{
+        //   int newType = Anchors[i].GetComponent<Anchors>()._lockType;
+        //    for(int j = 0; j<Slots.Length-1; j++)
+        //    {
+        //        if(Slots[j].GetComponent<PuzzlePiece>().type == newType)
+        //        {
+        //            Slots[j].GetComponent<PuzzlePiece>().setMaxP(1);
+        //        }
+        //    }
+        //}
+
+        finalScore = Anchors.Length;
+        Debug.Log("Number of anchors is " + Anchors.Length);
+        Debug.Log("final score is " + finalScore);
     }
 
     // Update is called once per frame
     void Update()
     {
         doMouseThing();
+        Debug.Log(score);
+       checkScore();
     }
+
+   void checkScore()
+   {
+       if(score == finalScore)
+       {
+           //proceed to next scene
+           Debug.Log("PUZZLE COMPLETE");
+       }
+       else
+       {
+           Debug.Log("Number of pieces correct is " + score + "/" + finalScore);
+       }
+   }
 
     void doMouseThing()
     {
@@ -57,7 +100,8 @@ public class PuzzleControler : MonoBehaviour
                     if (Pp.Spawn == true)
                     {
                         var invokeEvent = PickupEvent;
-                        if (invokeEvent != null) {
+                        if (invokeEvent != null)
+                        {
                             invokeEvent();
                         }
 
@@ -99,8 +143,8 @@ public class PuzzleControler : MonoBehaviour
                         Debug.Log("Do the rotation functions");
                         GameObject hitPiece = hit.collider.gameObject;
 
-                        hitPiece.transform.Rotate(0,0,90);
-
+                        hitPiece.transform.Rotate(0, 0, 90);
+                        hitPiece.GetComponent<PuzzlePiece>().checkRot();
                     }
                 }
             }
@@ -123,7 +167,7 @@ public class PuzzleControler : MonoBehaviour
                         GameObject hitPiece = hit.collider.gameObject;
 
                         hitPiece.transform.Rotate(0, 0, -90);
-
+                        hitPiece.GetComponent<PuzzlePiece>().checkRot();
                     }
                 }
             }
