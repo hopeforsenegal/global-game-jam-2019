@@ -72,6 +72,7 @@ public class PuzzleControler : MonoBehaviour
         {
             //proceed to next scene
             Debug.Log("PUZZLE COMPLETE");
+            GameController.Instance.LoadNextScene();
         }
         else
         {
