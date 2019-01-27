@@ -25,13 +25,14 @@ public class MainMenu : MonoBehaviour
 	public Button exitButton;
 	public Text title;
 	public LerpUI lerpTitle;
-	public AudioPlayer audioPlayer;
 	public FadeCanvasGroup ui;
 	public FadeCanvasGroup black;
 
 	#endregion
 
 	#region Private Member Variables
+
+	private AudioPlayer m_AudioPlayer;
 
 	#endregion
 
@@ -48,7 +49,9 @@ public class MainMenu : MonoBehaviour
 		black.FadeCompleteEvent += OnBlackFadeCompleteEvent;
 		lerpTitle.TransitionCompleteEvent += OnTransitionCompleteEvent;
 
-		audioPlayer.PlayMusic(settings.mainMenuAudio);
+		if (AudioPlayer.TryGetInstance(out m_AudioPlayer)) {
+			m_AudioPlayer.PlayMusic(settings.mainMenuAudio);
+		}
 	}
 
 	protected void Update()
@@ -91,8 +94,7 @@ public class MainMenu : MonoBehaviour
 
 	private void OnBlackFadeCompleteEvent()
 	{
-		GameController.Instance.sceneIndex = 0;
-		UnityEngine.SceneManagement.SceneManager.LoadScene(settings.scenes[GameController.Instance.sceneIndex].sceneToLoad);
+		GameController.Instance.LoadNextScene();
 	}
 
 	private void ExitGame()

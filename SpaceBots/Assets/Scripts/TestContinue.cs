@@ -21,13 +21,7 @@ public class TestContinue : MonoBehaviour
 		var hitEscKey = Input.GetKey(KeyCode.Escape);
 
 		if (hitEnterKey) {
-			NextScene();
+			GameController.Instance.LoadNextScene();
 		}
-	}
-
-	void NextScene()
-	{
-		GameController.Instance.sceneIndex++;
-		UnityEngine.SceneManagement.SceneManager.LoadScene(settings.scenes[GameController.Instance.sceneIndex].sceneToLoad);
 	}
 }

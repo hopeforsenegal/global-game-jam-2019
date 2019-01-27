@@ -38,15 +38,25 @@ public class GameController : MonoBehaviour
 
 	#region Properties
 
-	public int sceneIndex;
+	public int sceneIndex
+	{
+		get
+		{
+			return m_SceneIndex;
+		}
+	}
 
 	#endregion
 
 	#region Inspectables
 
+	public Settings settings;
+
 	#endregion
 
 	#region Private Member Variables
+
+	private int m_SceneIndex;
 
 	#endregion
 
@@ -66,6 +76,7 @@ public class GameController : MonoBehaviour
 
 	protected void Start()
 	{
+		m_SceneIndex = -1;
 	}
 
 	protected void Update()
@@ -88,6 +99,24 @@ public class GameController : MonoBehaviour
 	#endregion
 
 	#region Public Methods
+
+	public void ResetSceneToMainMenu()
+	{
+		m_SceneIndex = -1;
+		UnityEngine.SceneManagement.SceneManager.LoadScene(settings.initialScene);
+	}
+
+	public void LoadNextScene()
+	{
+		m_SceneIndex++;
+		string sceneToLoad = "";
+		if (settings.scenes != null && settings.scenes.Length > 0 && m_SceneIndex < settings.scenes.Length) {
+			sceneToLoad = settings.scenes[m_SceneIndex].sceneToLoad;
+		} else {
+			sceneToLoad = settings.initialScene;
+		}
+		UnityEngine.SceneManagement.SceneManager.LoadScene(sceneToLoad);
+	}
 
 	#endregion
 

@@ -14,6 +14,7 @@ public class Settings : ScriptableObject
 	[Header("General")]
 	[Tooltip("the game's title")]
 	public string gametitle;
+	public string initialScene;
 
 	[Tooltip("the scene")]
 	public SceneSettings[] scenes;
