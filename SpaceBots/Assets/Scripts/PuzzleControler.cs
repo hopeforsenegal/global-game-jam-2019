@@ -147,8 +147,9 @@ public class PuzzleControler : MonoBehaviour
             {
                 Debug.Log(hit.collider.name);
                 if (hit.collider.tag == "Piece")
-                {
-                    if (hit.collider.gameObject.GetComponent<PuzzlePiece>().slot != true)
+				{
+					var puz = hit.collider.gameObject.GetComponent<PuzzlePiece>();
+					if (puz.slot != true)
                     {
                         Debug.Log("Do the rotation functions");
                         GameObject hitPiece = hit.collider.gameObject;
@@ -159,9 +160,9 @@ public class PuzzleControler : MonoBehaviour
                             invokeEvent();
                         }
 
-						PieceEnumUtil.ToRight(hit.collider.gameObject.GetComponent<PuzzlePiece>().direction);
+						puz.direction = PieceEnumUtil.ToRight(hit.collider.gameObject.GetComponent<PuzzlePiece>().direction);
                         hitPiece.transform.Rotate(0, 0, 90);
-                        hitPiece.GetComponent<PuzzlePiece>().checkRot();
+						puz.checkRot();
                     }
                 }
             }

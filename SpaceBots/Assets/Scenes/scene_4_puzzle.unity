@@ -145,7 +145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lockType: 2
-  direction: 0
+  direction: 1
 --- !u!54 &28807202
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -270,7 +270,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lockType: 2
-  direction: 0
+  direction: 1
 --- !u!54 &57500236
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -861,7 +861,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lockType: 2
-  direction: 0
+  direction: 2
 --- !u!54 &221333054
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1065,7 +1065,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lockType: 2
-  direction: 0
+  direction: 3
 --- !u!54 &296597840
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1891,7 +1891,7 @@ PrefabInstance:
     - target: {fileID: 1325524183058005119, guid: 29bb55a4a8924c1438eaeb02715f2b7e,
         type: 3}
       propertyPath: MaxPieces
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8613615237778046563, guid: 29bb55a4a8924c1438eaeb02715f2b7e,
         type: 3}

@@ -206,18 +206,17 @@ public class PuzzlePiece : MonoBehaviour
 					}
 				}
 				else if (type == PieceEnumUtil.PieceEnum.L || type == PieceEnumUtil.PieceEnum.T)
-                {
-                    if (this.gameObject.transform.rotation == lockObj.transform.rotation)
-                    {
-                        Debug.Log("Matching rotation");
-                        lockObj.GetComponent<Anchors>().setCorrect();
-                    }
-                    else
-                    {
+				{
+					var anc = lockObj.GetComponent<Anchors>();
+					Debug.LogFormat("[{0}:checkRot] direction {1} anc.direction {2}", name, direction, anc.direction);
 
-                        Debug.Log("Wrong rotation");
-                        lockObj.GetComponent<Anchors>().setIncorrect();
-                    }
+					if (anc.direction == direction) {
+						Debug.LogFormat("[{0}:checkRot] Matching rotation {1}", name, this.gameObject.transform.rotation.z);
+						anc.setCorrect();
+					} else {
+						Debug.LogFormat("[{0}:checkRot] Wrong rotation {1}", name, this.gameObject.transform.rotation.z);
+						anc.setIncorrect();
+					}
                 }
             }
         }
