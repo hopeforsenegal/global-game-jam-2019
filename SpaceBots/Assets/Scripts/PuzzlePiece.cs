@@ -8,7 +8,6 @@ public class PuzzlePiece : MonoBehaviour
 	enum State
 	{
 		Free,
-		Moving,
 		ReadyToLock,
 		Locked
 	}
@@ -115,7 +114,7 @@ public class PuzzlePiece : MonoBehaviour
 		if (other.tag == "Anchor") {
 			if (locked != State.Locked) {
 				Debug.LogFormat("[{0}/{1}:OnTriggerExit] unlocked", name, id);
-				locked = State.Moving;
+				locked = State.Free;
 			}
 		}
 	}
