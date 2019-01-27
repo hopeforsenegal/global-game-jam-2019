@@ -152,7 +152,7 @@ public class PuzzleControler : MonoBehaviour
                             invokeEvent();
                         }
 
-						puz.direction = PieceEnumUtil.ToRight(hit.collider.gameObject.GetComponent<PuzzlePiece>().direction);
+						puz.direction = PieceEnumUtil.ToRight(puz.direction);
                         hitPiece.transform.Rotate(0, 0, 90);
 						puz.checkRot();
                     }
