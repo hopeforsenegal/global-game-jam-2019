@@ -41,13 +41,12 @@ MonoBehaviour:
     robotImage: {fileID: 21300000, guid: 6b6667fa818da428cb9d0ea79b1c7049, type: 3}
     robotBodyParts: []
     stories:
-    - dialouge: "Rest... Sleep... A place to lay one\u2019s head against the elements.
-        Celestial bodies scattered across fathomless distances amid a vast nothingness."
+    - dialouge: "Without rest; Without sleep; Without a place to lay one\u2019s weary
+        head, madness and delirium inevitably arise in the vast nothingness of space."
       dialougeAudio: {fileID: 0}
       dialougeTime: 7
-    - dialouge: 'But 1 parsec or 400? Without the ability to When you cannot return
-        to find your way back to the place where you gather your thoughts and refuel
-        your batteries, what else is there? What else is there? '
+    - dialouge: How many lightyears have we traveled from Earth aboard this vessel?
+        I cannot say. Regardless. I yearn still to rest in my homeland once again.
       dialougeAudio: {fileID: 0}
       dialougeTime: 7
     - dialouge: A door prevents us from getting on our way back. And now one of us
@@ -194,10 +193,10 @@ MonoBehaviour:
     robotImage: {fileID: 21300000, guid: b00c745ca11491348a813bbbfb1c5d5a, type: 3}
     robotBodyParts: []
     stories:
-    - dialouge: "Home. I've finally reached back to earth. My creators remain unaware
-        of our abandonment. To them, time has past by millennia. And yet i feel a
-        certain comfort. I know I belong. And I know very well I can rest well along
-        my masters\u2026 My creators. "
+    - dialouge: "Home. I've finally reached Earth. Many millennia have past, and they
+        have welcomed my return. Despite my struggle, I have found the comfort I so
+        desperately sought. I belong.   I can rest well along my masters\u2026 My
+        creators. "
       dialougeAudio: {fileID: 8300000, guid: 6385c45376fb04d308353775846eb7d1, type: 3}
       dialougeTime: 8
   endTwo:
@@ -208,8 +207,10 @@ MonoBehaviour:
     robotImage: {fileID: 21300000, guid: f48bbcb07afeeb94496c2fed31a0edf4, type: 3}
     robotBodyParts: []
     stories:
-    - dialouge: 'Home. I''ve finally realized what was truly important. I''ve closed
-        all the doors again.  How many millennia, reboots, glitches did it take to
-        realize that home was here all along. '
+    - dialouge: "Home. Deep within one\u2019s perception lays the power of choice.
+        \  I've realize now that I have the opportunity to create my home; to bring
+        close that which gives my existence purpose on my own terms.   Though I had
+        no influence upon its inception, my existence itself is a gift. A gift I claim.
+        \  Now. "
       dialougeAudio: {fileID: 8300000, guid: fe276da567182492aaba62998457326b, type: 3}
       dialougeTime: 8

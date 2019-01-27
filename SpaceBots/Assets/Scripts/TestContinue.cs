@@ -21,21 +21,21 @@ public class TestContinue : MonoBehaviour
 	}
 
 	// Update is called once per frame
-	void Update()
-	{
-		if (!m_Active)
-			return;
-		
-		var hitEnterKey = Input.GetKey(KeyCode.KeypadEnter)
-			|| Input.GetKey(KeyCode.Return);
-
-		var hitEscKey = Input.GetKey(KeyCode.Escape);
-
-		if (hitEnterKey) {
-			GameController.Instance.LoadNextScene();
-		}
-	}
-
+	//oid Update()
+	//
+	//	if (!m_Active)
+	//		return;
+	//	
+	//	var hitEnterKey = Input.GetKey(KeyCode.KeypadEnter)
+	//		|| Input.GetKey(KeyCode.Return);
+    //
+	//	var hitEscKey = Input.GetKey(KeyCode.Escape);
+    //
+	//	if (hitEnterKey) {
+	//		GameController.Instance.LoadNextScene();
+	//	}
+	//
+    //
 
 	private IEnumerator OnTimerShow(float delay)
 	{
