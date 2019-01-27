@@ -193,30 +193,29 @@ public class PuzzlePiece : MonoBehaviour
                 {
 
                     if (IsEqualWithinPrecision (lockObj.transform.rotation.z, 90, 0.5f) || IsEqualWithinPrecision(lockObj.transform.rotation.z, -90, 0.5f))
-                    {
-                        if (IsEqualWithinPrecision(this.gameObject.transform.rotation.z, 90, 0.5f) || IsEqualWithinPrecision(this.gameObject.transform.rotation.z, -90, 0.5f))
-                        {
+					{
+						if (IsEqualWithinPrecision(this.gameObject.transform.rotation.z, lockObj.transform.rotation.z, 0.5f))
+						{
+							Debug.LogFormat("[{0}:checkRot] Matching rotation {1}", name,this.gameObject.transform.rotation.z);
                             Debug.Log("Matching rotation");
                             lockObj.GetComponent<Anchors>().setCorrect();
                         }
                         else
-                        {
-
-                            Debug.Log("Wrong rotation");
+						{
+							Debug.LogFormat("[{0}:checkRot] Wrong rotation {1}", name, this.gameObject.transform.rotation.z);
                             lockObj.GetComponent<Anchors>().setIncorrect();
                         }
                     }
-                    else if(IsEqualWithinPrecision(lockObj.transform.rotation.z, 0, 0.5f) || IsEqualWithinPrecision(lockObj.transform.rotation.z, 180, 0.5f))
+                    else if(IsEqualWithinPrecision(lockObj.transform.rotation.z, 0, 0.5f) || IsEqualWithinPrecision(lockObj.transform.rotation.z%360, 180, 0.5f))
                     {
-                        if (IsEqualWithinPrecision(this.gameObject.transform.rotation.z, 0, 0.5f) || IsEqualWithinPrecision(this.gameObject.transform.rotation.z, -180, 0.5f))
-                        {
-                            Debug.Log("Matching rotation");
+						if (IsEqualWithinPrecision(this.gameObject.transform.rotation.z, lockObj.transform.rotation.z, 0.5f))
+						{
+							Debug.LogFormat("[{0}:checkRot] Matching rotation {1}", name, this.gameObject.transform.rotation.z);
                             lockObj.GetComponent<Anchors>().setCorrect();
                         }
                         else
-                        {
-
-                            Debug.Log("Wrong rotation");
+						{
+							Debug.LogFormat("[{0}:checkRot] Wrong rotation {1}", name, this.gameObject.transform.rotation.z);
                             lockObj.GetComponent<Anchors>().setIncorrect();
                         }
                     }
