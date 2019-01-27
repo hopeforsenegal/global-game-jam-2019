@@ -177,17 +177,59 @@ public class PuzzlePiece : MonoBehaviour
         {
             if (locked == State.Locked)
             {
-                //Quaternion curRot = this.gameObject.transform.rotation;
-                //float angle = Quaternion.Angle(curRot, lockRot);
-                if (this.gameObject.transform.rotation == lockObj.transform.rotation)
-                {
-                    Debug.Log("Matching rotation");
+                //if cross
+                if (type == 0) {
                     lockObj.GetComponent<Anchors>().setCorrect();
                 }
-                else
+                //if line
+                else if (type == 1)
                 {
-                    Debug.Log("Wrong rotation");
-                    lockObj.GetComponent<Anchors>().setIncorrect();
+                    if (lockObj.transform.rotation.z == 90 || lockObj.transform.rotation.z == -90)
+                    {
+                        if (this.gameObject.transform.rotation.z == 90 || this.gameObject.transform.rotation.z == -90)
+                        {
+                            Debug.Log("Matching rotation");
+                            lockObj.GetComponent<Anchors>().setCorrect();
+                        }
+                        else
+                        {
+
+                            Debug.Log("Wrong rotation");
+                            lockObj.GetComponent<Anchors>().setIncorrect();
+                        }
+                    }
+                    else if(lockObj.transform.rotation.z == 0 || lockObj.transform.rotation.z == 180)
+                    {
+                        if (this.gameObject.transform.rotation.z == 0 || this.gameObject.transform.rotation.z == -180)
+                        {
+                            Debug.Log("Matching rotation");
+                            lockObj.GetComponent<Anchors>().setCorrect();
+                        }
+                        else
+                        {
+
+                            Debug.Log("Wrong rotation");
+                            lockObj.GetComponent<Anchors>().setIncorrect();
+                        }
+                    }
+                    else
+                    {
+                        Debug.Log("YOU DONE GOOFED");
+                    }
+                }
+                else if (type == 2 || type == 3)
+                {
+                    if (this.gameObject.transform.rotation == lockObj.transform.rotation)
+                    {
+                        Debug.Log("Matching rotation");
+                        lockObj.GetComponent<Anchors>().setCorrect();
+                    }
+                    else
+                    {
+
+                        Debug.Log("Wrong rotation");
+                        lockObj.GetComponent<Anchors>().setIncorrect();
+                    }
                 }
             }
         }
