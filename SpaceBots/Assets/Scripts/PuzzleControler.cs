@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class PuzzleControler : MonoBehaviour
 {
-
     public static event Action PickupEvent;
 
     public static event Action DropWrongEvent;
@@ -15,7 +14,6 @@ public class PuzzleControler : MonoBehaviour
     PuzzlePiece Pp;
 
     public int score;
-	public int previousscore;
 
     public int finalScore;
 
@@ -106,28 +104,22 @@ public class PuzzleControler : MonoBehaviour
                     {
                         hit.collider.gameObject.GetComponent<PuzzlePiece>().setState();
                     }
-                    else if (hit.collider.gameObject.GetComponent<PuzzlePiece>().Spawn == true)
-                    {
-                        //set hit to an obj ref
-                        Slot = hit.collider.gameObject;
-                        Pp = Slot.GetComponent<PuzzlePiece>();
-                        if (Pp.Spawn == true)
-                        {
+                    else if (hit.collider.gameObject.GetComponent<PuzzlePiece>().Spawn == true) {
+						//set hit to an obj ref
+						Slot = hit.collider.gameObject;
+						Pp = Slot.GetComponent<PuzzlePiece>();
+						if (Pp.Spawn == true && Pp.slot == true) {
+							//subtract piece
+							Pp.SubPiece();
+							Piece = Instantiate(Slot);
+							Piece.GetComponent<PuzzlePiece>().slot = false;
+							Pp = Piece.GetComponent<PuzzlePiece>();
+						}
 
-                            if (Pp.slot == true)
-                            {
-                                //subtract piece
-                                Pp.SubPiece();
-                                Piece = Instantiate(Slot);
-                                Piece.GetComponent<PuzzlePiece>().slot = false;
-                                Pp = Piece.GetComponent<PuzzlePiece>();
-                            }
-                        }
-
-                        //set last position to the hit location
-                        lastPos = Slot.GetComponent<Transform>().transform.position;
-                        Pp.SetParent(Slot);
-                    }
+						//set last position to the hit location
+						lastPos = Slot.GetComponent<Transform>().transform.position;
+						Pp.SetParent(Slot);
+					}
                 }
             }
         }

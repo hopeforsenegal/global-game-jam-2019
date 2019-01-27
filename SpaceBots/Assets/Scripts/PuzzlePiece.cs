@@ -174,11 +174,6 @@ public class PuzzlePiece : MonoBehaviour
 		}
 	}
 
-    private static bool IsEqualWithinPrecision(float a, float b, float precision)
-    {
-        return Mathf.Abs(a - b) < precision || Mathf.Approximately(Mathf.Abs(a - b), 0f);
-    }
-
     public void checkRot()
     {
         if (!slot)
