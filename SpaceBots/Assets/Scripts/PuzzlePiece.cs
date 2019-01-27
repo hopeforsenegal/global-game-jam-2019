@@ -173,6 +173,11 @@ public class PuzzlePiece : MonoBehaviour
 		}
 	}
 
+    private static bool IsEqualWithinPrecision(float a, float b, float precision)
+    {
+        return Mathf.Abs(a - b) < precision || Mathf.Approximately(Mathf.Abs(a - b), 0f);
+    }
+
     public void checkRot()
     {
         if (!slot)
@@ -186,9 +191,10 @@ public class PuzzlePiece : MonoBehaviour
                 //if line
                 else if (type == 1)
                 {
-                    if (lockObj.transform.rotation.z == 90 || lockObj.transform.rotation.z == -90)
+
+                    if (IsEqualWithinPrecision (lockObj.transform.rotation.z, 90, 0.5f) || IsEqualWithinPrecision(lockObj.transform.rotation.z, -90, 0.5f))
                     {
-                        if (this.gameObject.transform.rotation.z == 90 || this.gameObject.transform.rotation.z == -90)
+                        if (IsEqualWithinPrecision(this.gameObject.transform.rotation.z, 90, 0.5f) || IsEqualWithinPrecision(this.gameObject.transform.rotation.z, -90, 0.5f))
                         {
                             Debug.Log("Matching rotation");
                             lockObj.GetComponent<Anchors>().setCorrect();
@@ -200,9 +206,9 @@ public class PuzzlePiece : MonoBehaviour
                             lockObj.GetComponent<Anchors>().setIncorrect();
                         }
                     }
-                    else if(lockObj.transform.rotation.z == 0 || lockObj.transform.rotation.z == 180)
+                    else if(IsEqualWithinPrecision(lockObj.transform.rotation.z, 0, 0.5f) || IsEqualWithinPrecision(lockObj.transform.rotation.z, 180, 0.5f))
                     {
-                        if (this.gameObject.transform.rotation.z == 0 || this.gameObject.transform.rotation.z == -180)
+                        if (IsEqualWithinPrecision(this.gameObject.transform.rotation.z, 0, 0.5f) || IsEqualWithinPrecision(this.gameObject.transform.rotation.z, -180, 0.5f))
                         {
                             Debug.Log("Matching rotation");
                             lockObj.GetComponent<Anchors>().setCorrect();
