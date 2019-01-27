@@ -12,7 +12,8 @@ public class DialougeText : MonoBehaviour
 
 	#region Events
 
-	public event Action DialougeCompleteEvent;
+	public event Action DialougeShowCompleteEvent;
+	public event Action DialougeHideEvent;
 
 	#endregion
 
@@ -62,10 +63,16 @@ public class DialougeText : MonoBehaviour
 		if (AudioPlayer.TryGetInstance(out m_AudioPlayer)) {
 			m_AudioPlayer.PlaySound(story.dialougeAudio);
 		}
-		m_Text.text = story.dialouge;
 		m_TextFadeCanvasGroup.Fade(0f, 1f, 1f);
+		m_Text.text = story.dialouge;
 		m_TextLerpUI.enabled = true;
-		StartCoroutine(OnTimer(story.dialougeTime));
+		StartCoroutine(OnTimerShow(story.dialougeTime));
+	}
+
+	public void Hide()
+	{
+		m_TextFadeCanvasGroup.Fade(1, 0f, 0.3f);
+		StartCoroutine(OnTimerHide(0.3f));
 	}
 
 	public void Reset()
@@ -80,10 +87,20 @@ public class DialougeText : MonoBehaviour
 
 	#region Private Methods
 
-	private IEnumerator OnTimer(float delay)
+	private IEnumerator OnTimerHide(float delay)
 	{
 		yield return new WaitForSeconds(delay);
-		var invokeEvent = DialougeCompleteEvent;
+		Reset();
+		var invokeEvent = DialougeHideEvent;
+		if (invokeEvent != null) {
+			invokeEvent();
+		}
+	}
+
+	private IEnumerator OnTimerShow(float delay)
+	{
+		yield return new WaitForSeconds(delay);
+		var invokeEvent = DialougeShowCompleteEvent;
 		if (invokeEvent != null) {
 			invokeEvent();
 		}

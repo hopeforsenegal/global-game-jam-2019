@@ -37,8 +37,9 @@ public class StoryTeller : MonoBehaviour
 
 	protected void Start()
 	{
+		text.DialougeShowCompleteEvent += OnDialougeShowCompleteEvent;
+		text.DialougeHideEvent += OnDialougeHideEvent;
 		fadeIn.FadeCompleteEvent += OnFadeCompleteEvent;
-		text.DialougeCompleteEvent += OnDialougeCompleteEvent;
 		m_StoryIndex = 0;
 	}
 
@@ -78,9 +79,13 @@ public class StoryTeller : MonoBehaviour
 		ShowNextStory();
 	}
 
-	private void OnDialougeCompleteEvent()
+	private void OnDialougeShowCompleteEvent()
 	{
-		text.Reset();
+		text.Hide();
+	}
+
+	private void OnDialougeHideEvent()
+	{
 		ShowNextStory();
 	}
 

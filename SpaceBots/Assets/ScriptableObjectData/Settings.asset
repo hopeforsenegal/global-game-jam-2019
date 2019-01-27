@@ -41,6 +41,15 @@ MonoBehaviour:
         Celestial bodies scattered across fathomless distances amid a vast nothingness."
       dialougeAudio: {fileID: 8300000, guid: 73dc21ecfea1b4762ab05b6ed65ed1b2, type: 3}
       dialougeTime: 4
+    - dialouge: 'But 1 parsec or 400? Without the ability to When you cannot return
+        to find your way back to the place where you gather your thoughts and refuel
+        your batteries, what else is there? What else is there? '
+      dialougeAudio: {fileID: 8300000, guid: 73dc21ecfea1b4762ab05b6ed65ed1b2, type: 3}
+      dialougeTime: 4
+    - dialouge: A door prevents us from getting on our way back. And now one of us
+        must make the ultimate sacrifice.
+      dialougeAudio: {fileID: 8300000, guid: 73dc21ecfea1b4762ab05b6ed65ed1b2, type: 3}
+      dialougeTime: 4
   - sceneAudio: {fileID: 8300000, guid: 348e032076e3c4c2c8bcf91f8dc600c3, type: 3}
     sceneToLoad: scene_1_puzzle
     robotImage: {fileID: 21300000, guid: 6b6667fa818da428cb9d0ea79b1c7049, type: 3}
