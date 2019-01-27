@@ -25,8 +25,9 @@ public class PuzzlePiece : MonoBehaviour
 	//use to track number of pieces
 	public int id;
 
-    //use for piece type
-	public PieceEnum type;
+	//use for piece type
+	public PieceEnumUtil.PieceEnum type;
+	public PieceEnumUtil.DirectionEnum direction;
 
 	//if you can spawn a piece
 	public bool Spawn;
@@ -185,46 +186,26 @@ public class PuzzlePiece : MonoBehaviour
             if (locked == State.Locked)
             {
                 //if cross
-				if (type == PieceEnum.Cross) {
+				if (type == PieceEnumUtil.PieceEnum.Cross) {
                     lockObj.GetComponent<Anchors>().setCorrect();
                 }
                 //if line
-				else if (type == PieceEnum.Line)
-                {
+				else if (type == PieceEnumUtil.PieceEnum.Line) {
+					var anc = lockObj.GetComponent<Anchors>();
+					Debug.LogFormat("[{0}:checkRot] direction {1} anc.direction {2}", name, direction, anc.direction);
 
-                    if (IsEqualWithinPrecision (lockObj.transform.rotation.z, 90, 0.5f) || IsEqualWithinPrecision(lockObj.transform.rotation.z, -90, 0.5f))
+					if (anc.direction == direction || PieceEnumUtil.ToAcross(anc.direction) == direction)
 					{
-						if (IsEqualWithinPrecision(this.gameObject.transform.rotation.z, lockObj.transform.rotation.z, 0.5f))
-						{
-							Debug.LogFormat("[{0}:checkRot] Matching rotation {1}", name,this.gameObject.transform.rotation.z);
-                            Debug.Log("Matching rotation");
-                            lockObj.GetComponent<Anchors>().setCorrect();
-                        }
-                        else
-						{
-							Debug.LogFormat("[{0}:checkRot] Wrong rotation {1}", name, this.gameObject.transform.rotation.z);
-                            lockObj.GetComponent<Anchors>().setIncorrect();
-                        }
-                    }
-                    else if(IsEqualWithinPrecision(lockObj.transform.rotation.z, 0, 0.5f) || IsEqualWithinPrecision(lockObj.transform.rotation.z%360, 180, 0.5f))
-                    {
-						if (IsEqualWithinPrecision(this.gameObject.transform.rotation.z, lockObj.transform.rotation.z, 0.5f))
-						{
-							Debug.LogFormat("[{0}:checkRot] Matching rotation {1}", name, this.gameObject.transform.rotation.z);
-                            lockObj.GetComponent<Anchors>().setCorrect();
-                        }
-                        else
-						{
-							Debug.LogFormat("[{0}:checkRot] Wrong rotation {1}", name, this.gameObject.transform.rotation.z);
-                            lockObj.GetComponent<Anchors>().setIncorrect();
-                        }
-                    }
+						Debug.LogFormat("[{0}:checkRot] Matching rotation {1}", name, this.gameObject.transform.rotation.z);
+						anc.setCorrect();
+					}
                     else
-                    {
-                        Debug.Log("YOU DONE GOOFED");
-                    }
-                }
-				else if (type == PieceEnum.L || type == PieceEnum.T)
+					{
+						Debug.LogFormat("[{0}:checkRot] Wrong rotation {1}", name, this.gameObject.transform.rotation.z);
+						anc.setIncorrect();
+					}
+				}
+				else if (type == PieceEnumUtil.PieceEnum.L || type == PieceEnumUtil.PieceEnum.T)
                 {
                     if (this.gameObject.transform.rotation == lockObj.transform.rotation)
                     {

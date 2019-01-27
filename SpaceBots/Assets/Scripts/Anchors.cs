@@ -9,11 +9,12 @@ public class Anchors : MonoBehaviour
 
     PuzzleControler Pc;
 
-	public PieceEnum _lockType;
+	public PieceEnumUtil.PieceEnum _lockType;
 
     bool correct;
 
     private int num;
+	public PieceEnumUtil.DirectionEnum direction;
 
     public void setCorrect()
     {

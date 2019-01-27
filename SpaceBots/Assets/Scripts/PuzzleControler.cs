@@ -15,6 +15,7 @@ public class PuzzleControler : MonoBehaviour
     PuzzlePiece Pp;
 
     public int score;
+	public int previousscore;
 
     public int finalScore;
 
@@ -62,7 +63,7 @@ public class PuzzleControler : MonoBehaviour
     void Update()
     {
         doMouseThing();
-        Debug.Log(score);
+        //Debug.Log(score);
         checkScore();
     }
 
@@ -76,7 +77,7 @@ public class PuzzleControler : MonoBehaviour
         }
         else
         {
-            Debug.Log("Number of pieces correct is " + score + "/" + finalScore);
+            //Debug.Log("Number of pieces correct is " + score + "/" + finalScore);
         }
     }
 
@@ -158,6 +159,7 @@ public class PuzzleControler : MonoBehaviour
                             invokeEvent();
                         }
 
+						PieceEnumUtil.ToRight(hit.collider.gameObject.GetComponent<PuzzlePiece>().direction);
                         hitPiece.transform.Rotate(0, 0, 90);
                         hitPiece.GetComponent<PuzzlePiece>().checkRot();
                     }
@@ -176,7 +178,8 @@ public class PuzzleControler : MonoBehaviour
                 Debug.Log(hit.collider.name);
                 if (hit.collider.tag == "Piece")
                 {
-                    if (hit.collider.gameObject.GetComponent<PuzzlePiece>().slot != true)
+					var puz = hit.collider.gameObject.GetComponent<PuzzlePiece>();
+					if (puz.slot != true)
                     {
                         Debug.Log("Do the rotation functions");
                         GameObject hitPiece = hit.collider.gameObject;
@@ -187,8 +190,9 @@ public class PuzzleControler : MonoBehaviour
                             invokeEvent();
                         }
 
+						puz.direction = PieceEnumUtil.ToLeft(puz.direction);
                         hitPiece.transform.Rotate(0, 0, -90);
-                        hitPiece.GetComponent<PuzzlePiece>().checkRot();
+						puz.checkRot();
                     }
                 }
             }
