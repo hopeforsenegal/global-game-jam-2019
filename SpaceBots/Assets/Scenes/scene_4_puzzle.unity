@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e75c12a2b06b1d643a3623e9b3091d0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _lockType: 1
+  _lockType: 2
 --- !u!54 &28807202
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -268,7 +268,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e75c12a2b06b1d643a3623e9b3091d0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _lockType: 1
+  _lockType: 2
 --- !u!54 &57500236
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -442,16 +442,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.4
       objectReference: {fileID: 0}
-    - target: {fileID: 1325524183058005119, guid: 29bb55a4a8924c1438eaeb02715f2b7e,
-        type: 3}
-      propertyPath: type
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1325524183058005119, guid: 29bb55a4a8924c1438eaeb02715f2b7e,
-        type: 3}
-      propertyPath: MaxPieces
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 1872050604477987355, guid: 29bb55a4a8924c1438eaeb02715f2b7e,
         type: 3}
       propertyPath: m_Color.r
@@ -472,6 +462,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.b
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1325524183058005119, guid: 29bb55a4a8924c1438eaeb02715f2b7e,
+        type: 3}
+      propertyPath: type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1325524183058005119, guid: 29bb55a4a8924c1438eaeb02715f2b7e,
+        type: 3}
+      propertyPath: MaxPieces
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8613615237778046563, guid: 29bb55a4a8924c1438eaeb02715f2b7e,
         type: 3}
@@ -733,7 +733,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e75c12a2b06b1d643a3623e9b3091d0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _lockType: 0
+  _lockType: 1
 --- !u!54 &168364012
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -857,7 +857,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e75c12a2b06b1d643a3623e9b3091d0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _lockType: 1
+  _lockType: 2
 --- !u!54 &221333054
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1060,7 +1060,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e75c12a2b06b1d643a3623e9b3091d0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _lockType: 1
+  _lockType: 2
 --- !u!54 &296597840
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1286,7 +1286,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e75c12a2b06b1d643a3623e9b3091d0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _lockType: 1
+  _lockType: 2
 --- !u!54 &599410486
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1603,6 +1603,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1325524183058005119, guid: 29bb55a4a8924c1438eaeb02715f2b7e,
+        type: 3}
+      propertyPath: type
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 29bb55a4a8924c1438eaeb02715f2b7e, type: 3}
 --- !u!1 &803189697
@@ -1846,16 +1851,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.4
       objectReference: {fileID: 0}
-    - target: {fileID: 1325524183058005119, guid: 29bb55a4a8924c1438eaeb02715f2b7e,
-        type: 3}
-      propertyPath: type
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1325524183058005119, guid: 29bb55a4a8924c1438eaeb02715f2b7e,
-        type: 3}
-      propertyPath: MaxPieces
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 1872050604477987355, guid: 29bb55a4a8924c1438eaeb02715f2b7e,
         type: 3}
       propertyPath: m_Color.g
@@ -1876,6 +1871,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.b
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1325524183058005119, guid: 29bb55a4a8924c1438eaeb02715f2b7e,
+        type: 3}
+      propertyPath: type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1325524183058005119, guid: 29bb55a4a8924c1438eaeb02715f2b7e,
+        type: 3}
+      propertyPath: MaxPieces
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8613615237778046563, guid: 29bb55a4a8924c1438eaeb02715f2b7e,
         type: 3}
@@ -1963,7 +1968,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e75c12a2b06b1d643a3623e9b3091d0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _lockType: 3
+  _lockType: 0
 --- !u!54 &1217139105
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2796,16 +2801,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.4
       objectReference: {fileID: 0}
-    - target: {fileID: 1325524183058005119, guid: 29bb55a4a8924c1438eaeb02715f2b7e,
-        type: 3}
-      propertyPath: type
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1325524183058005119, guid: 29bb55a4a8924c1438eaeb02715f2b7e,
-        type: 3}
-      propertyPath: MaxPieces
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1872050604477987355, guid: 29bb55a4a8924c1438eaeb02715f2b7e,
         type: 3}
       propertyPath: m_Color.g
@@ -2825,6 +2820,16 @@ PrefabInstance:
     - target: {fileID: 1872050604477987355, guid: 29bb55a4a8924c1438eaeb02715f2b7e,
         type: 3}
       propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1325524183058005119, guid: 29bb55a4a8924c1438eaeb02715f2b7e,
+        type: 3}
+      propertyPath: type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1325524183058005119, guid: 29bb55a4a8924c1438eaeb02715f2b7e,
+        type: 3}
+      propertyPath: MaxPieces
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8613615237778046563, guid: 29bb55a4a8924c1438eaeb02715f2b7e,
