@@ -63,7 +63,7 @@ public class PuzzleControler : MonoBehaviour
     void Update()
     {
         doMouseThing();
-        //Debug.Log(score);
+        Debug.Log(score);
         checkScore();
     }
 
@@ -77,7 +77,7 @@ public class PuzzleControler : MonoBehaviour
         }
         else
         {
-            //Debug.Log("Number of pieces correct is " + score + "/" + finalScore);
+            Debug.Log("Number of pieces correct is " + score + "/" + finalScore);
         }
     }
 

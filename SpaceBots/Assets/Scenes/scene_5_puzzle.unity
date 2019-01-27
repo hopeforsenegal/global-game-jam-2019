@@ -145,6 +145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lockType: 2
+  direction: 0
 --- !u!54 &28807202
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -269,6 +270,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lockType: 2
+  direction: 0
 --- !u!54 &57500236
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -393,6 +395,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lockType: 3
+  direction: 0
 --- !u!54 &73522753
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -716,6 +719,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lockType: 1
+  direction: 2
 --- !u!54 &168364012
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -840,6 +844,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lockType: 2
+  direction: 0
 --- !u!54 &221333054
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -964,6 +969,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lockType: 2
+  direction: 0
 --- !u!54 &296597840
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1320,6 +1326,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lockType: 2
+  direction: 0
 --- !u!54 &599410486
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1772,6 +1779,11 @@ PrefabInstance:
       propertyPath: type
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1325524183058005119, guid: 29bb55a4a8924c1438eaeb02715f2b7e,
+        type: 3}
+      propertyPath: direction
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 29bb55a4a8924c1438eaeb02715f2b7e, type: 3}
 --- !u!1 &1112421222
@@ -1886,6 +1898,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lockType: 0
+  direction: 0
 --- !u!54 &1217139105
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2225,6 +2238,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lockType: 2
+  direction: 0
 --- !u!54 &1507643995
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2494,6 +2508,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lockType: 3
+  direction: 0
 --- !u!54 &1757522387
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3027,4 +3042,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
+  previousscore: 0
   finalScore: 0

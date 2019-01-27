@@ -145,6 +145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lockType: 1
+  direction: 0
 --- !u!54 &57500236
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -559,6 +560,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lockType: 1
+  direction: 2
 --- !u!54 &168364012
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -684,6 +686,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lockType: 1
+  direction: 2
 --- !u!54 &341451972
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1226,6 +1229,11 @@ PrefabInstance:
       propertyPath: type
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1325524183058005119, guid: 29bb55a4a8924c1438eaeb02715f2b7e,
+        type: 3}
+      propertyPath: direction
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 29bb55a4a8924c1438eaeb02715f2b7e, type: 3}
 --- !u!1 &1217139103
@@ -1261,6 +1269,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lockType: 0
+  direction: 0
 --- !u!54 &1217139105
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1654,16 +1663,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.4
       objectReference: {fileID: 0}
-    - target: {fileID: 1325524183058005119, guid: 29bb55a4a8924c1438eaeb02715f2b7e,
-        type: 3}
-      propertyPath: type
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1325524183058005119, guid: 29bb55a4a8924c1438eaeb02715f2b7e,
-        type: 3}
-      propertyPath: MaxPieces
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1872050604477987355, guid: 29bb55a4a8924c1438eaeb02715f2b7e,
         type: 3}
       propertyPath: m_Color.g
@@ -1683,6 +1682,16 @@ PrefabInstance:
     - target: {fileID: 1872050604477987355, guid: 29bb55a4a8924c1438eaeb02715f2b7e,
         type: 3}
       propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1325524183058005119, guid: 29bb55a4a8924c1438eaeb02715f2b7e,
+        type: 3}
+      propertyPath: type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1325524183058005119, guid: 29bb55a4a8924c1438eaeb02715f2b7e,
+        type: 3}
+      propertyPath: MaxPieces
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8613615237778046563, guid: 29bb55a4a8924c1438eaeb02715f2b7e,
@@ -1804,6 +1813,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lockType: 2
+  direction: 0
 --- !u!54 &1757522387
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2332,6 +2342,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
+  previousscore: 0
   finalScore: 0
 --- !u!1 &2142968887
 GameObject:
