@@ -9,7 +9,7 @@ public class Anchors : MonoBehaviour
 
     PuzzleControler Pc;
 
-    public int _lockType;
+	public PieceEnum _lockType;
 
     bool correct;
 

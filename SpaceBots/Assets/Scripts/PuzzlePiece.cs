@@ -26,7 +26,7 @@ public class PuzzlePiece : MonoBehaviour
 	public int id;
 
     //use for piece type
-    public int type;
+	public PieceEnum type;
 
 	//if you can spawn a piece
 	public bool Spawn;
@@ -185,11 +185,11 @@ public class PuzzlePiece : MonoBehaviour
             if (locked == State.Locked)
             {
                 //if cross
-                if (type == 0) {
+				if (type == PieceEnum.Cross) {
                     lockObj.GetComponent<Anchors>().setCorrect();
                 }
                 //if line
-                else if (type == 1)
+				else if (type == PieceEnum.Line)
                 {
 
                     if (IsEqualWithinPrecision (lockObj.transform.rotation.z, 90, 0.5f) || IsEqualWithinPrecision(lockObj.transform.rotation.z, -90, 0.5f))
@@ -225,7 +225,7 @@ public class PuzzlePiece : MonoBehaviour
                         Debug.Log("YOU DONE GOOFED");
                     }
                 }
-                else if (type == 2 || type == 3)
+				else if (type == PieceEnum.L || type == PieceEnum.T)
                 {
                     if (this.gameObject.transform.rotation == lockObj.transform.rotation)
                     {
