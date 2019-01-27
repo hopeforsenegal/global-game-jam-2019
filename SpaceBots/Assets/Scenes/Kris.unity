@@ -210,7 +210,7 @@ GameObject:
   - component: {fileID: 59615939}
   - component: {fileID: 59615943}
   m_Layer: 0
-  m_Name: Line_Anchor
+  m_Name: +_Anchor
   m_TagString: Anchor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -554,7 +554,7 @@ GameObject:
   - component: {fileID: 1493073379}
   - component: {fileID: 1493073378}
   m_Layer: 0
-  m_Name: L_Anchor (1)
+  m_Name: Line_Anchor (1)
   m_TagString: Anchor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -657,13 +657,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1493073377}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 5.52, y: 1.2803313, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!1001 &1530523674
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -866,7 +866,7 @@ GameObject:
   - component: {fileID: 1754311117}
   - component: {fileID: 1754311118}
   m_Layer: 0
-  m_Name: L_Anchor
+  m_Name: Line_Anchor
   m_TagString: Anchor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1064,7 +1064,7 @@ GameObject:
   - component: {fileID: 2039478028}
   - component: {fileID: 2039478027}
   m_Layer: 0
-  m_Name: +_Anchor
+  m_Name: L_Anchor
   m_TagString: Anchor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
