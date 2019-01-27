@@ -11,7 +11,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f8ede08710fc74b20810471d4444c698, type: 3}
   m_Name: Settings
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier:
   mainMenuBackground: {fileID: 21300000, guid: 63bdcd728f5114590a75b0aa6236f4b8, type: 3}
   fadeSpeed: 1
   highlightColor: {r: 0.5896226, g: 1, b: 0.99170643, a: 1}
@@ -39,6 +39,7 @@ MonoBehaviour:
     theme: Rest & Shelter
     isEndScene: 0
     robotImage: {fileID: 21300000, guid: 6b6667fa818da428cb9d0ea79b1c7049, type: 3}
+    robotBodyParts: []
     stories:
     - dialouge: "Rest... Sleep... A place to lay one\u2019s head against the elements.
         Celestial bodies scattered across fathomless distances amid a vast nothingness."
@@ -55,28 +56,38 @@ MonoBehaviour:
       dialougeTime: 4
   - sceneAudio: {fileID: 8300000, guid: 348e032076e3c4c2c8bcf91f8dc600c3, type: 3}
     sceneToLoad: scene_1_puzzle
-    theme: 
+    theme:
     isEndScene: 0
     robotImage: {fileID: 21300000, guid: 6b6667fa818da428cb9d0ea79b1c7049, type: 3}
+    robotBodyParts:
+    - {fileID: 21300000, guid: 6b6667fa818da428cb9d0ea79b1c7049, type: 3}
+    - {fileID: 21300000, guid: 661c7ae85f0e54b6c9a8569106967b04, type: 3}
+    - {fileID: 21300000, guid: 4245d978d81e24a6e9c515caed5026d0, type: 3}
+    - {fileID: 21300000, guid: 6e6416587c4be4faca5ba1ddbd0baa62, type: 3}
+    - {fileID: 21300000, guid: eea8cf43a647a4ba684b62a8511c25f4, type: 3}
+    - {fileID: 21300000, guid: 55dc964e47e6d40948fd10c808b394cc, type: 3}
     stories: []
   - sceneAudio: {fileID: 8300000, guid: fd7eef92021394607863023a6f573fe3, type: 3}
     sceneToLoad: story_telling_scenes
     theme: Safety & Comfort
     isEndScene: 0
     robotImage: {fileID: 21300000, guid: d1016adb07e8a4ca898779d2591a6716, type: 3}
+    robotBodyParts: []
     stories: []
   - sceneAudio: {fileID: 8300000, guid: c981afef2d69945179c418e6fed534f4, type: 3}
     sceneToLoad: story_telling_scenes
-    theme: 
+    theme:
     isEndScene: 1
     robotImage: {fileID: 21300000, guid: c417f1b498c9744498f23693f96fb1e8, type: 3}
+    robotBodyParts: []
     stories: []
   endOne:
     sceneAudio: {fileID: 8300000, guid: c981afef2d69945179c418e6fed534f4, type: 3}
     sceneToLoad: ending
-    theme: 
+    theme:
     isEndScene: 0
     robotImage: {fileID: 21300000, guid: 63bdcd728f5114590a75b0aa6236f4b8, type: 3}
+    robotBodyParts: []
     stories:
     - dialouge: "Home. I've finally reached back to earth. My creators remain unaware
         of our abandonment. To them, time has past by millennia. And yet i feel a
@@ -87,9 +98,10 @@ MonoBehaviour:
   endTwo:
     sceneAudio: {fileID: 8300000, guid: c981afef2d69945179c418e6fed534f4, type: 3}
     sceneToLoad: ending
-    theme: 
+    theme:
     isEndScene: 0
     robotImage: {fileID: 21300000, guid: 94ee8ed4593864a438ccf92b8725488f, type: 3}
+    robotBodyParts: []
     stories:
     - dialouge: 'Home. I''ve finally realized what was truly important. I''ve closed
         all the doors again.  How many millennia, reboots, glitches did it take to

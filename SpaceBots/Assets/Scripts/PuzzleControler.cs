@@ -16,7 +16,7 @@ public class PuzzleControler : MonoBehaviour
 
     public int score;
 
-    private int finalScore;
+    public int finalScore;
 
     //spawned piece ref
     private GameObject Piece;

@@ -54,6 +54,8 @@ public class Settings : ScriptableObject
 		[Header("Render")]
 		[Tooltip("the robot image")]
 		public Sprite robotImage;
+		[Tooltip("the robot image")]
+		public Sprite[] robotBodyParts;
 
 		[Header("Story")]
 		[Tooltip("the story")]

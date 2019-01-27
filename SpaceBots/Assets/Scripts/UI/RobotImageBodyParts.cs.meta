@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: b03342788b01945cf92efea0c8c15d8e
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - settings: {fileID: 11400000, guid: 369f2543f60104ff3850e5a05d9eb242, type: 2}
+  - fadeIn: {instanceID: 0}
+  - textFadeCanvasGroup: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
