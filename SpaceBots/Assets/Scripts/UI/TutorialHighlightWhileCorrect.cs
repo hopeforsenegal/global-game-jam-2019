@@ -41,10 +41,15 @@ public class TutorialHighlightWhileCorrect : MonoBehaviour
 		Anchors.DropCorrectEvent += OnDropCorrectEvent;
 	}
 
+	protected void OnDestroy()
+	{
+		Anchors.DropCorrectEvent -= OnDropCorrectEvent;
+	}
+
 	private void OnDropCorrectEvent()
 	{
 		m_Pulsater.enabled = false;
-		gameObject.active = false;
+		gameObject.SetActive(false);
 	}
 
 	#endregion

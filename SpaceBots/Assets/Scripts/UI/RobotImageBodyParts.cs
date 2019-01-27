@@ -49,6 +49,11 @@ public class RobotImageBodyParts : MonoBehaviour
 		Anchors.DropCorrectEvent += OnDropCorrectEvent;
 	}
 
+	protected void OnDestroy()
+	{
+		Anchors.DropCorrectEvent -= OnDropCorrectEvent;
+	}
+
 	#endregion
 
 	#region Public Methods

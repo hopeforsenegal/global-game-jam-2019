@@ -48,7 +48,7 @@ public class TutorialHighlightPiece : MonoBehaviour
 	{
 		if (m_PuzzlePiece != null && m_PuzzlePiece.hasBeenPickedUp) {
 			m_Pulsater.enabled = false;
-			gameObject.active = false;
+			gameObject.SetActive(false);
 		}
 	}
 
