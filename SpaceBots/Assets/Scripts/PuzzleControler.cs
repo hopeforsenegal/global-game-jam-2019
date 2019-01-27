@@ -6,13 +6,13 @@ using UnityEngine;
 public class PuzzleControler : MonoBehaviour
 {
 
-	public static event Action PickupEvent;
+    public static event Action PickupEvent;
 
-	public static event Action DropCorrectEvent;
+    public static event Action DropCorrectEvent;
 
-	public static event Action DropWrongEvent;
+    public static event Action DropWrongEvent;
 
-	public static event Action RotateEvent;
+    public static event Action RotateEvent;
 
 
     PuzzlePiece Pp;
@@ -29,7 +29,7 @@ public class PuzzleControler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -55,11 +55,11 @@ public class PuzzleControler : MonoBehaviour
                     Slot = hit.collider.gameObject;
                     Pp = Slot.GetComponent<PuzzlePiece>();
                     if (Pp.Spawn == true)
-					{
-						var invokeEvent = PickupEvent;
-						if (invokeEvent != null) {
-							invokeEvent();
-						}
+                    {
+                        var invokeEvent = PickupEvent;
+                        if (invokeEvent != null) {
+                            invokeEvent();
+                        }
 
                         if (Pp.slot == true)
                         {
@@ -79,8 +79,54 @@ public class PuzzleControler : MonoBehaviour
         }
         //do lock
         else if (Input.GetMouseButtonUp(0))
-		{
+        {
             Piece = null;
+        }
+        //rotate right
+        else if (Input.mouseScrollDelta.y > 0f)
+        {
+            Debug.Log("Casting rotation ray");
+            RaycastHit hit;
+            Ray CheckRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+            Debug.Log("Sending RayCast");
+            if (Physics.Raycast(CheckRay, out hit, 100f))
+            {
+                Debug.Log(hit.collider.name);
+                if (hit.collider.tag == "Piece")
+                {
+                    if (hit.collider.gameObject.GetComponent<PuzzlePiece>().slot != true)
+                    {
+                        Debug.Log("Do the rotation functions");
+                        GameObject hitPiece = hit.collider.gameObject;
+
+                        hitPiece.transform.Rotate(0,0,90);
+
+                    }
+                }
+            }
+        }
+        //rotate left
+        else if (Input.mouseScrollDelta.y < 0f)
+        {
+            Debug.Log("Casting rotation ray");
+            RaycastHit hit;
+            Ray CheckRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+            Debug.Log("Sending RayCast");
+            if (Physics.Raycast(CheckRay, out hit, 100f))
+            {
+                Debug.Log(hit.collider.name);
+                if (hit.collider.tag == "Piece")
+                {
+                    if (hit.collider.gameObject.GetComponent<PuzzlePiece>().slot != true)
+                    {
+                        Debug.Log("Do the rotation functions");
+                        GameObject hitPiece = hit.collider.gameObject;
+
+                        hitPiece.transform.Rotate(0, 0, -90);
+
+                    }
+                }
+            }
         }
     }
 }
