@@ -40,8 +40,8 @@ MonoBehaviour:
     - dialouge: "Rest... Sleep... A place to lay one\u2019s head against the elements.
         Celestial bodies scattered across fathomless distances amid a vast nothingness."
       dialougeAudio: {fileID: 8300000, guid: 73dc21ecfea1b4762ab05b6ed65ed1b2, type: 3}
-      dialougeTime: 3
+      dialougeTime: 4
   - sceneAudio: {fileID: 8300000, guid: 348e032076e3c4c2c8bcf91f8dc600c3, type: 3}
     sceneToLoad: scene_1_puzzle
-    robotImage: {fileID: 21300000, guid: 02c8498dfaf464795a934e6ae6af1c51, type: 3}
+    robotImage: {fileID: 21300000, guid: 6b6667fa818da428cb9d0ea79b1c7049, type: 3}
     stories: []

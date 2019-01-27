@@ -564,6 +564,7 @@ GameObject:
   - component: {fileID: 388640422}
   - component: {fileID: 388640424}
   - component: {fileID: 388640423}
+  - component: {fileID: 388640425}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -627,6 +628,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 388640421}
   m_CullTransparentMesh: 0
+--- !u!114 &388640425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 388640421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4e06b418299747b38c5125493ca5765, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  settings: {fileID: 11400000, guid: 369f2543f60104ff3850e5a05d9eb242, type: 2}
 --- !u!1 &778342849
 GameObject:
   m_ObjectHideFlags: 0
@@ -1124,7 +1138,7 @@ MonoBehaviour:
   settings: {fileID: 11400000, guid: 369f2543f60104ff3850e5a05d9eb242, type: 2}
   fadeIn: {fileID: 4572413850749542354}
   text: {fileID: 2108669955}
-  robot: {fileID: 388640423}
+  exitBlack: {fileID: 1882135722}
 --- !u!1 &1484004120
 GameObject:
   m_ObjectHideFlags: 0
@@ -1378,6 +1392,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1882135722 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4572413849251098037, guid: 299d78b5ca1d54a988c3246ee0f6f33a,
+    type: 3}
+  m_PrefabInstance: {fileID: 4572413850749542353}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0d47b7b88aa748b390241e73e635729, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2108669948
 GameObject:
   m_ObjectHideFlags: 0

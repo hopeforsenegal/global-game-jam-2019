@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,6 +12,8 @@ public class DialougeText : MonoBehaviour
 
 	#region Events
 
+	public event Action DialougeCompleteEvent;
+
 	#endregion
 
 	#region Properties
@@ -19,6 +22,7 @@ public class DialougeText : MonoBehaviour
 
 	#region Inspectables
 
+	private AudioPlayer m_AudioPlayer;
 	private Text m_Text;
 	private FadeCanvasGroup m_TextFadeCanvasGroup;
 	private LerpUI m_TextLerpUI;
@@ -26,6 +30,8 @@ public class DialougeText : MonoBehaviour
 	#endregion
 
 	#region Private Member Variables
+
+	private Vector3 m_OriginalPosition;
 
 	#endregion
 
@@ -42,20 +48,46 @@ public class DialougeText : MonoBehaviour
 		Debug.Assert(m_TextLerpUI != null);
 	}
 
+	protected void Start()
+	{
+		m_OriginalPosition = GetComponent<RectTransform>().localPosition;
+	}
+
 	#endregion
 
 	#region Public Methods
 
 	public void Show(Settings.SceneStory story)
 	{
+		if (AudioPlayer.TryGetInstance(out m_AudioPlayer)) {
+			m_AudioPlayer.PlaySound(story.dialougeAudio);
+		}
 		m_Text.text = story.dialouge;
 		m_TextFadeCanvasGroup.Fade(0f, 1f, 1f);
 		m_TextLerpUI.enabled = true;
+		StartCoroutine(OnTimer(story.dialougeTime));
+	}
+
+	public void Reset()
+	{
+		m_Text.text = "";
+		m_TextFadeCanvasGroup.Fade(0f, 0f, 0f);
+		m_TextLerpUI.enabled = false;
+		m_TextLerpUI.transform.localPosition = m_OriginalPosition;
 	}
 
 	#endregion
 
 	#region Private Methods
+
+	private IEnumerator OnTimer(float delay)
+	{
+		yield return new WaitForSeconds(delay);
+		var invokeEvent = DialougeCompleteEvent;
+		if (invokeEvent != null) {
+			invokeEvent();
+		}
+	}
 
 	#endregion
 }

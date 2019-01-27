@@ -22,14 +22,14 @@ public class StoryTeller : MonoBehaviour
 	public Settings settings;
 	public FadeIn fadeIn;
 	public DialougeText text;
-	public Image robot;
+	public FadeCanvasGroup exitBlack;
 
 	#endregion
 
 	#region Private Member Variables
 
-	private AudioPlayer m_AudioPlayer;
 	private GameController m_GameController;
+	private int m_StoryIndex;
 
 	#endregion
 
@@ -37,12 +37,9 @@ public class StoryTeller : MonoBehaviour
 
 	protected void Start()
 	{
-		int index = 0;
-		if (GameController.TryGetInstance(out m_GameController)) {
-			index = m_GameController.sceneIndex;
-		}
-		robot.sprite = settings.scenes[index].robotImage;
 		fadeIn.FadeCompleteEvent += OnFadeCompleteEvent;
+		text.DialougeCompleteEvent += OnDialougeCompleteEvent;
+		m_StoryIndex = 0;
 	}
 
 	#endregion
@@ -53,17 +50,43 @@ public class StoryTeller : MonoBehaviour
 
 	#region Private Methods
 
-	private void OnFadeCompleteEvent()
+	private int SceneIndex()
 	{
 		int index = 0;
 		if (GameController.TryGetInstance(out m_GameController)) {
 			index = m_GameController.sceneIndex;
 		}
-		var story = settings.scenes[index].stories[0];
-		text.Show(story);
-		if (AudioPlayer.TryGetInstance(out m_AudioPlayer)) {
-			m_AudioPlayer.PlaySound(story.dialougeAudio);
+		return index;
+	}
+
+	private void ShowNextStory()
+	{
+		var index = SceneIndex();
+		var stories = settings.scenes[index].stories;
+		if (m_StoryIndex < stories.Length) {
+			var story = stories[m_StoryIndex];
+			m_StoryIndex++;
+			text.Show(story);
+		} else {
+			exitBlack.Fade(0, 1, settings.fadeSpeed);
+			exitBlack.FadeCompleteEvent += OnExitFadeCompleteEvent;
 		}
+	}
+
+	private void OnFadeCompleteEvent()
+	{
+		ShowNextStory();
+	}
+
+	private void OnDialougeCompleteEvent()
+	{
+		text.Reset();
+		ShowNextStory();
+	}
+
+	private void OnExitFadeCompleteEvent()
+	{
+		GameController.Instance.LoadNextScene();
 	}
 
 	#endregion
