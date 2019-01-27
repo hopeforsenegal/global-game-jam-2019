@@ -12,8 +12,7 @@ public class Settings : ScriptableObject
 
 
 	[Header("General")]
-	[Tooltip("the game's title")]
-	public string gametitle;
+	[Tooltip("the game's starting scene")]
 	public string initialScene;
 
 	[Tooltip("the scene")]

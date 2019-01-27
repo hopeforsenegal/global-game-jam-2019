@@ -23,7 +23,6 @@ public class MainMenu : MonoBehaviour
 	public Image background;
 	public Button playButton;
 	public Button exitButton;
-	public Text title;
 	public LerpUI lerpTitle;
 	public FadeCanvasGroup ui;
 	public FadeCanvasGroup black;
@@ -41,7 +40,6 @@ public class MainMenu : MonoBehaviour
 	protected void Start()
 	{
 		background.sprite = settings.mainMenuBackground;
-		title.text = settings.gametitle;
 
 		playButton.onClick.AddListener(PlayGame);
 		exitButton.onClick.AddListener(ExitGame);
@@ -79,6 +77,9 @@ public class MainMenu : MonoBehaviour
 
 	private void PlayGame()
 	{
+		if (AudioPlayer.TryGetInstance(out m_AudioPlayer)) {
+			m_AudioPlayer.PlaySound(settings.pickupSoundEffect);
+		}
 		ui.Fade(1, 0, settings.fadeSpeed);
 	}
 
