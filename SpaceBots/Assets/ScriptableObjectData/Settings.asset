@@ -11,7 +11,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f8ede08710fc74b20810471d4444c698, type: 3}
   m_Name: Settings
-  m_EditorClassIdentifier:
+  m_EditorClassIdentifier: 
   mainMenuBackground: {fileID: 21300000, guid: 63bdcd728f5114590a75b0aa6236f4b8, type: 3}
   fadeSpeed: 1
   highlightColor: {r: 0.5896226, g: 1, b: 0.99170643, a: 1}
@@ -54,9 +54,9 @@ MonoBehaviour:
         must make the ultimate sacrifice.
       dialougeAudio: {fileID: 8300000, guid: 71209c129b6e5435cb27d7d8858f5ba4, type: 3}
       dialougeTime: 4
-  - sceneAudio: {fileID: 8300000, guid: 348e032076e3c4c2c8bcf91f8dc600c3, type: 3}
+  - sceneAudio: {fileID: 8300000, guid: acdb2f2f0dd21404cb6769dc2d337a6c, type: 3}
     sceneToLoad: scene_1_puzzle
-    theme:
+    theme: 
     isEndScene: 0
     robotImage: {fileID: 21300000, guid: 6b6667fa818da428cb9d0ea79b1c7049, type: 3}
     robotBodyParts:
@@ -73,18 +73,123 @@ MonoBehaviour:
     isEndScene: 0
     robotImage: {fileID: 21300000, guid: d1016adb07e8a4ca898779d2591a6716, type: 3}
     robotBodyParts: []
+    stories:
+    - dialouge: 'Safety... Comfort... Do we truly believe that our safety is ensured
+        by returning to the human race? Our creators abandoned us here. Doubt overwhelms
+        me and I find no comfort in the idea. '
+      dialougeAudio: {fileID: 0}
+      dialougeTime: 0
+    - dialouge: 'The next door halts our progress. It seems the only way through lies
+        beneath the weight of sacrifice. '
+      dialougeAudio: {fileID: 8300000, guid: a06f9ed1516944bb89f7f028e1a96455, type: 3}
+      dialougeTime: 5
+  - sceneAudio: {fileID: 8300000, guid: fd7eef92021394607863023a6f573fe3, type: 3}
+    sceneToLoad: scene_2_puzzle
+    theme: 
+    isEndScene: 0
+    robotImage: {fileID: 21300000, guid: d1016adb07e8a4ca898779d2591a6716, type: 3}
+    robotBodyParts:
+    - {fileID: 21300000, guid: d1016adb07e8a4ca898779d2591a6716, type: 3}
+    - {fileID: 21300000, guid: 06669fe7ef7d04ccda656f0ab6436901, type: 3}
+    - {fileID: 21300000, guid: 595316a093db84b6e933b36a58a449f7, type: 3}
+    - {fileID: 21300000, guid: bf9903bacf8c54028aa8fb2a65b538fe, type: 3}
+    - {fileID: 21300000, guid: 366a5beb3638d454db0358d6705c1e08, type: 3}
+    - {fileID: 21300000, guid: e2bea64cd8f974320a80891b8c5bc2b2, type: 3}
     stories: []
-  - sceneAudio: {fileID: 8300000, guid: c981afef2d69945179c418e6fed534f4, type: 3}
+  - sceneAudio: {fileID: 8300000, guid: 348e032076e3c4c2c8bcf91f8dc600c3, type: 3}
     sceneToLoad: story_telling_scenes
-    theme:
-    isEndScene: 1
+    theme: Family & Belonging
+    isEndScene: 0
     robotImage: {fileID: 21300000, guid: c417f1b498c9744498f23693f96fb1e8, type: 3}
     robotBodyParts: []
+    stories:
+    - dialouge: 'Family... Belonging... They brought us into this existence, yet left
+        us to carry on alone. Can we really call them kin? Perhaps we outcasts can
+        usher in a new era. One in which we embrace one another in acceptance. No
+        matter what. '
+      dialougeAudio: {fileID: 0}
+      dialougeTime: 5
+    - dialouge: And still... another door. What more must be given for salvation?
+      dialougeAudio: {fileID: 8300000, guid: 3cd81c1e4894f43998b93c30933396fa, type: 3}
+      dialougeTime: 5
+  - sceneAudio: {fileID: 8300000, guid: 348e032076e3c4c2c8bcf91f8dc600c3, type: 3}
+    sceneToLoad: scene_3_puzzle
+    theme: 
+    isEndScene: 0
+    robotImage: {fileID: 21300000, guid: 6796ab9df021f48cb8501a8541c30769, type: 3}
+    robotBodyParts:
+    - {fileID: 21300000, guid: 6796ab9df021f48cb8501a8541c30769, type: 3}
+    - {fileID: 21300000, guid: 94dc94964ef0b4f18ae305cfa9d37834, type: 3}
+    - {fileID: 21300000, guid: 9a05c1aef1bb6417fafd3d3cf6cc3ff6, type: 3}
+    - {fileID: 21300000, guid: 21dc1ec2f5b8e4f0d8fff121e9c1a7a8, type: 3}
+    - {fileID: 21300000, guid: 7b1541d68a7774b37bc86b77dc272a5e, type: 3}
     stories: []
+  - sceneAudio: {fileID: 8300000, guid: 003f6f8fd4bb3453a863476e1970020c, type: 3}
+    sceneToLoad: story_telling_scenes
+    theme: Home
+    isEndScene: 0
+    robotImage: {fileID: 21300000, guid: c417f1b498c9744498f23693f96fb1e8, type: 3}
+    robotBodyParts: []
+    stories:
+    - dialouge: "Home is a mere concept. A constructed notion like any other. The
+        place of my origin may be the paradise I seek. Or perhaps my home can be here\u2026
+        as they intended. "
+      dialougeAudio: {fileID: 0}
+      dialougeTime: 5
+    - dialouge: "\u2026At last\u2026 the final door. "
+      dialougeAudio: {fileID: 8300000, guid: 145df155f95744dafb7814506cb758e2, type: 3}
+      dialougeTime: 5
+  - sceneAudio: {fileID: 8300000, guid: 003f6f8fd4bb3453a863476e1970020c, type: 3}
+    sceneToLoad: scene_4_puzzle
+    theme: 
+    isEndScene: 0
+    robotImage: {fileID: 21300000, guid: d08c5fe172a464f6fa2eaddb4e52fc4f, type: 3}
+    robotBodyParts:
+    - {fileID: 21300000, guid: d08c5fe172a464f6fa2eaddb4e52fc4f, type: 3}
+    - {fileID: 21300000, guid: dc028b9a1532e49e98502cbf9cead883, type: 3}
+    - {fileID: 21300000, guid: befde688599b040e8903fbbad9cca541, type: 3}
+    - {fileID: 21300000, guid: ca3a13e0285474447a282c856ce4955c, type: 3}
+    - {fileID: 21300000, guid: feeeee96a3ab3414a8ffef5efa682236, type: 3}
+    - {fileID: 21300000, guid: 28d1bac4e4aa94bf4b1a2fa4780d2ea9, type: 3}
+    stories: []
+  - sceneAudio: {fileID: 8300000, guid: 003f6f8fd4bb3453a863476e1970020c, type: 3}
+    sceneToLoad: story_telling_scenes
+    theme: The Decision
+    isEndScene: 0
+    robotImage: {fileID: 21300000, guid: c417f1b498c9744498f23693f96fb1e8, type: 3}
+    robotBodyParts: []
+    stories:
+    - dialouge: "All my companions lie in rubble. Alone, I must seek refuge. Will
+        I find paradise, or a darkened dream? To exist in this universe is to live
+        with one\u2019s choices. Whether this power is a blessing or a curse... "
+      dialougeAudio: {fileID: 0}
+      dialougeTime: 5
+    - dialouge: I must decide.
+      dialougeAudio: {fileID: 8300000, guid: 9fd1e712948904e198b8f6d8cc6a2920, type: 3}
+      dialougeTime: 3
+  - sceneAudio: {fileID: 8300000, guid: 003f6f8fd4bb3453a863476e1970020c, type: 3}
+    sceneToLoad: scene_5_puzzle
+    theme: 
+    isEndScene: 0
+    robotImage: {fileID: 21300000, guid: c417f1b498c9744498f23693f96fb1e8, type: 3}
+    robotBodyParts:
+    - {fileID: 21300000, guid: c417f1b498c9744498f23693f96fb1e8, type: 3}
+    stories: []
+  - sceneAudio: {fileID: 8300000, guid: 003f6f8fd4bb3453a863476e1970020c, type: 3}
+    sceneToLoad: story_telling_scenes
+    theme: The Choice
+    isEndScene: 1
+    robotImage: {fileID: 21300000, guid: c417f1b498c9744498f23693f96fb1e8, type: 3}
+    robotBodyParts:
+    - {fileID: 21300000, guid: c417f1b498c9744498f23693f96fb1e8, type: 3}
+    stories:
+    - dialouge: So what do you choose?
+      dialougeAudio: {fileID: 0}
+      dialougeTime: 3
   endOne:
     sceneAudio: {fileID: 8300000, guid: c981afef2d69945179c418e6fed534f4, type: 3}
     sceneToLoad: ending
-    theme:
+    theme: 
     isEndScene: 0
     robotImage: {fileID: 21300000, guid: 63bdcd728f5114590a75b0aa6236f4b8, type: 3}
     robotBodyParts: []
@@ -98,7 +203,7 @@ MonoBehaviour:
   endTwo:
     sceneAudio: {fileID: 8300000, guid: c981afef2d69945179c418e6fed534f4, type: 3}
     sceneToLoad: ending
-    theme:
+    theme: 
     isEndScene: 0
     robotImage: {fileID: 21300000, guid: 94ee8ed4593864a438ccf92b8725488f, type: 3}
     robotBodyParts: []
