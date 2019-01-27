@@ -1975,6 +1975,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 4634948014568322352, guid: b6dff6ae5e02c46a8b7beb904aa08cf0,
+        type: 3}
+      propertyPath: puzzleControler
+      value: 
+      objectReference: {fileID: 2136806731}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6dff6ae5e02c46a8b7beb904aa08cf0, type: 3}
 --- !u!224 &2010416568 stripped

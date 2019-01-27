@@ -490,7 +490,7 @@ PrefabInstance:
     - target: {fileID: 4572413849251098033, guid: 299d78b5ca1d54a988c3246ee0f6f33a,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4572413849251098033, guid: 299d78b5ca1d54a988c3246ee0f6f33a,
         type: 3}
@@ -806,6 +806,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 4634948014568322352, guid: b6dff6ae5e02c46a8b7beb904aa08cf0,
+        type: 3}
+      propertyPath: puzzleControler
+      value: 
+      objectReference: {fileID: 2136806731}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6dff6ae5e02c46a8b7beb904aa08cf0, type: 3}
 --- !u!224 &200442380 stripped
