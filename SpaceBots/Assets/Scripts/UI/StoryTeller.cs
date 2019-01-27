@@ -55,6 +55,14 @@ public class StoryTeller : MonoBehaviour
 		m_stayOff = false;
 	}
 
+	protected void OnDestroy()
+	{
+		text.DialougeShowCompleteEvent -= OnDialougeShowCompleteEvent;
+		text.DialougeHideEvent -= OnDialougeHideEvent;
+		fadeIn.FadeCompleteEvent -= OnFadeCompleteEvent;
+		exitBlack.FadeCompleteEvent -= OnExitFadeCompleteEvent;
+	}
+
 	#endregion
 
 	#region Public Methods

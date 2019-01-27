@@ -42,7 +42,7 @@ public class FadeIn : MonoBehaviour
 
 	#region Private Member Variables
 
-		private readonly object m_EventLock = new object();
+	private readonly object m_EventLock = new object();
 
 	private FadeCanvasGroup m_FadeCanvasGroup;
 

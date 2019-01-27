@@ -51,6 +51,14 @@ public class EndTeller : MonoBehaviour
 		}
 	}
 
+	protected void OnDestroy()
+	{
+		text.DialougeShowCompleteEvent -= OnDialougeShowCompleteEvent;
+		text.DialougeHideEvent -= OnDialougeHideEvent;
+		fadeIn.FadeCompleteEvent -= OnFadeCompleteEvent;
+		exitBlack.FadeCompleteEvent -= OnExitFadeCompleteEvent;
+	}
+
 	protected void Update()
 	{
 		if (!m_Finished)
