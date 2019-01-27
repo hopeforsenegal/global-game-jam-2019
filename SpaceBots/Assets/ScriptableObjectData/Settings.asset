@@ -78,7 +78,7 @@ MonoBehaviour:
         by returning to the human race? Our creators abandoned us here. Doubt overwhelms
         me and I find no comfort in the idea. '
       dialougeAudio: {fileID: 0}
-      dialougeTime: 0
+      dialougeTime: 5
     - dialouge: 'The next door halts our progress. It seems the only way through lies
         beneath the weight of sacrifice. '
       dialougeAudio: {fileID: 8300000, guid: a06f9ed1516944bb89f7f028e1a96455, type: 3}
