@@ -44,16 +44,16 @@ MonoBehaviour:
     - dialouge: "Rest... Sleep... A place to lay one\u2019s head against the elements.
         Celestial bodies scattered across fathomless distances amid a vast nothingness."
       dialougeAudio: {fileID: 0}
-      dialougeTime: 4
+      dialougeTime: 7
     - dialouge: 'But 1 parsec or 400? Without the ability to When you cannot return
         to find your way back to the place where you gather your thoughts and refuel
         your batteries, what else is there? What else is there? '
       dialougeAudio: {fileID: 0}
-      dialougeTime: 4
+      dialougeTime: 7
     - dialouge: A door prevents us from getting on our way back. And now one of us
         must make the ultimate sacrifice.
       dialougeAudio: {fileID: 8300000, guid: 71209c129b6e5435cb27d7d8858f5ba4, type: 3}
-      dialougeTime: 4
+      dialougeTime: 5
   - sceneAudio: {fileID: 8300000, guid: acdb2f2f0dd21404cb6769dc2d337a6c, type: 3}
     sceneToLoad: scene_1_puzzle
     theme: 
@@ -163,7 +163,7 @@ MonoBehaviour:
         I find paradise, or a darkened dream? To exist in this universe is to live
         with one\u2019s choices. Whether this power is a blessing or a curse... "
       dialougeAudio: {fileID: 0}
-      dialougeTime: 5
+      dialougeTime: 7
     - dialouge: I must decide.
       dialougeAudio: {fileID: 8300000, guid: 9fd1e712948904e198b8f6d8cc6a2920, type: 3}
       dialougeTime: 3
