@@ -26,6 +26,13 @@ public class Settings : ScriptableObject
 	[Tooltip("the scenes")]
 	public SceneSettings[] scenes;
 
+	[Serializable]
+	public struct SceneStory
+	{
+		public string dialouge;
+		public AudioClip dialougeAudio;
+		public int dialougeTime;
+	}
 
 	[Serializable]
 	public struct SceneSettings
@@ -39,9 +46,12 @@ public class Settings : ScriptableObject
 		[Tooltip("the game scene")]
 		public string sceneToLoad;
 
-
 		[Header("Render")]
 		[Tooltip("the robot image")]
 		public Sprite robotImage;
+
+		[Header("Story")]
+		[Tooltip("the story")]
+		public SceneStory[] stories;
 	}
 }

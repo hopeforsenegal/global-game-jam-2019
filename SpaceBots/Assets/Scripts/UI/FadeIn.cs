@@ -12,6 +12,22 @@ public class FadeIn : MonoBehaviour
 
 	#region Events
 
+	public event Action FadeCompleteEvent
+	{
+		add
+		{
+			lock (m_EventLock) {
+				m_FadeCanvasGroup.FadeCompleteEvent += value;
+			}
+		}
+		remove
+		{
+			lock (m_EventLock) {
+				m_FadeCanvasGroup.FadeCompleteEvent -= value;
+			}
+		}
+	}
+
 	#endregion
 
 	#region Properties
@@ -25,6 +41,8 @@ public class FadeIn : MonoBehaviour
 	#endregion
 
 	#region Private Member Variables
+
+		private readonly object m_EventLock = new object();
 
 	private FadeCanvasGroup m_FadeCanvasGroup;
 
